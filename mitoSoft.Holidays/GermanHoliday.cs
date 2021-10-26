@@ -1,30 +1,33 @@
 ﻿using System;
 
-namespace mitoSoft.homeNet.Holidays.Models
+namespace mitoSoft.Holidays.Models
 {
     public class GermanHoliday : IComparable<GermanHoliday>
     {
-        public GermanHoliday(bool isFix, DateTime datum, string name)
+        public GermanHoliday(bool isFix, DateTime datum, string name, params States[] states)
         {
             this.IsFix = isFix;
             this.Date = datum;
             this.Name = name;
+            this.States = states;
         }
 
         /// <summary>
         /// Beschreibung: 
         /// </summary>
-        public string Name { get; set; }
+        public string Name { get; }
+
+        public States[] States { get; }
 
         /// <summary>
         /// Beschreibung: 
         /// </summary>
-        public DateTime Date { get; set; }
+        public DateTime Date { get; }
 
         /// <summary>
         /// Beschreibung: 
         /// </summary>
-        public bool IsFix { get; set; }
+        public bool IsFix { get; }
 
         public int CompareTo(GermanHoliday other)
         {

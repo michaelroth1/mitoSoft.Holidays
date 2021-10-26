@@ -1,10 +1,10 @@
-﻿using mitoSoft.homeNet.Holidays.Models;
+﻿using mitoSoft.Holidays.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace mitoSoft.homeNet.Holidays.Extensions
+namespace mitoSoft.Holidays.Extensions
 {
     public static class DateTimeExtensions
     {
@@ -15,16 +15,21 @@ namespace mitoSoft.homeNet.Holidays.Extensions
             return holiday;
         }
 
-        public static bool IsHoliday(this DateTime value)
+        public static bool IsHoliday(this DateTime value, States state)
         {
             var holiday = value.GetHoliday();
+
             if (holiday == null)
             {
                 return false;
             }
-            else
+            else if (holiday.States.Count() == 0 || holiday.States.ToList().Any(s => s == state))
             {
                 return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }
