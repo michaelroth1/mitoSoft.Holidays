@@ -12,12 +12,13 @@
     <RootNamespace>mitoSoft.homeNet.Holidays</RootNamespace>
     <AssemblyName>mitoSoft.homeNet.Holidays</AssemblyName>
     <Authors>mitoSoft</Authors>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <Copyright>(c) mitoSoft</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/michaelroth1/mitoSoft.homeNet.Holidays</PackageProjectUrl>
     <PackageIcon>mitoSoft.png</PackageIcon>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>A lightweight .net graph library to determine german holidays</Description>
   </PropertyGroup>
 
   <ItemGroup>
