@@ -12,13 +12,14 @@
     <RootNamespace>mitoSoft.Holidays</RootNamespace>
     <AssemblyName>mitoSoft.Holidays</AssemblyName>
     <Authors>mitoSoft</Authors>
-    <Version>1.1.1</Version>
+    <Version>1.1.2</Version>
     <Copyright>(c) mitoSoft</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/michaelroth1/mitoSoft.Holidays</PackageProjectUrl>
     <PackageIcon>mitoSoft.png</PackageIcon>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Description>A lightweight .net graph library to determine german holidays</Description>
+    <Description>A lightweight .net graph library for determining german holidays</Description>
+    <PackageTags>german holidays deutsche feiertage</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
