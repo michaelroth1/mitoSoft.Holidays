@@ -12,7 +12,7 @@
     <RootNamespace>mitoSoft.Holidays</RootNamespace>
     <AssemblyName>mitoSoft.Holidays</AssemblyName>
     <Authors>mitoSoft</Authors>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <Copyright>(c) mitoSoft</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/michaelroth1/mitoSoft.Holidays</PackageProjectUrl>
