@@ -2,9 +2,7 @@ name: publish Holidays
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
+    
 jobs:
   publish:
     name: build, pack & publish 
@@ -23,9 +21,9 @@ jobs:
         uses: rohith/publish-nuget@v2
         with:
           # Filepath of the project to be packaged, relative to root of repository
-          PROJECT_FILE_PATH: mitoSoft.homeNet.Holidays.csproj
+          PROJECT_FILE_PATH: mitoSoft.Holidays/mitoSoft.Holidays.csproj
           #NuGet package id, used for version detection & defaults to project name
-          #PACKAGE_NAME: mitoSoft.homeNet.Holidays
+          #PACKAGE_NAME: mitoSoft.Holidays
           # Filepath with version info, relative to root of repository & defaults to PROJECT_FILE_PATH
           #VERSION_FILE_PATH: # optional
           # Regex pattern to extract version info in a capturing group
