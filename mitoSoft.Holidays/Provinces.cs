@@ -4,7 +4,7 @@ using System.Text;
 
 namespace mitoSoft.Holidays
 {
-    public enum States
+    public enum Provinces
     {
         BadenWuerttemberg,
         Niedersachsen,

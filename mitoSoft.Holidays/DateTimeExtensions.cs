@@ -15,7 +15,7 @@ namespace mitoSoft.Holidays.Extensions
             return holiday;
         }
 
-        public static bool IsHoliday(this DateTime value, States state)
+        public static bool IsHoliday(this DateTime value, Provinces federalProvinces)
         {
             var holiday = value.GetHoliday();
 
@@ -23,7 +23,7 @@ namespace mitoSoft.Holidays.Extensions
             {
                 return false;
             }
-            else if (holiday.States.Count() == 0 || holiday.States.ToList().Any(s => s == state))
+            else if (holiday.FederalProvinces.Count() == 0 || holiday.FederalProvinces.ToList().Any(s => s == federalProvinces))
             {
                 return true;
             }

@@ -4,12 +4,12 @@ namespace mitoSoft.Holidays.Models
 {
     public class GermanHoliday : IComparable<GermanHoliday>
     {
-        public GermanHoliday(bool isFix, DateTime datum, string name, params States[] states)
+        public GermanHoliday(bool isFix, DateTime datum, string name, params Provinces[] federalProvinces)
         {
             this.IsFix = isFix;
             this.Date = datum;
             this.Name = name;
-            this.States = states;
+            this.FederalProvinces = federalProvinces;
         }
 
         /// <summary>
@@ -17,7 +17,7 @@ namespace mitoSoft.Holidays.Models
         /// </summary>
         public string Name { get; }
 
-        public States[] States { get; }
+        public Provinces[] FederalProvinces { get; }
 
         /// <summary>
         /// Beschreibung: 

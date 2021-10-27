@@ -14,9 +14,9 @@ namespace mitoSoft.Holidays.Tests
         {
             var date = new DateTime(2019, 11, 1);
 
-            Assert.AreEqual(true, date.IsHoliday(States.RheinlandPfalz));
+            Assert.AreEqual(true, date.IsHoliday(Provinces.RheinlandPfalz));
 
-            Assert.AreEqual(false, date.IsHoliday(States.Bremen));
+            Assert.AreEqual(false, date.IsHoliday(Provinces.Bremen));
         }
 
         [TestMethod]
@@ -25,7 +25,7 @@ namespace mitoSoft.Holidays.Tests
         {
             var date = new DateTime(2019, 12, 25);
 
-            Assert.AreEqual(true, date.IsHoliday(States.RheinlandPfalz));
+            Assert.AreEqual(true, date.IsHoliday(Provinces.RheinlandPfalz));
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("de");
             Assert.AreEqual("1. Weihnachtstag", date.GetHoliday().Name);
 
@@ -42,7 +42,7 @@ namespace mitoSoft.Holidays.Tests
         {
             var date = new DateTime(2021, 4, 4);
 
-            Assert.AreEqual(true, date.IsHoliday(States.NordrheinWestfalen));
+            Assert.AreEqual(true, date.IsHoliday(Provinces.NordrheinWestfalen));
         }
 
         [TestMethod]
@@ -51,7 +51,7 @@ namespace mitoSoft.Holidays.Tests
         {
             var date = new DateTime(2019, 12, 23);
 
-            Assert.AreEqual(false, date.IsHoliday(States.RheinlandPfalz));
+            Assert.AreEqual(false, date.IsHoliday(Provinces.RheinlandPfalz));
         }
     }
 }

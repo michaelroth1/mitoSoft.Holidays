@@ -17,12 +17,12 @@ namespace mitoSoft.Holidays
             DateTime osterSonntag = GetOsterSonntag(year);
 
             yield return new GermanHoliday(true, new DateTime(year, 1, 1), Properties.Resources.newyear);
-            yield return new GermanHoliday(true, new DateTime(year, 1, 6), Properties.Resources.holyKings, States.BadenWuerttemberg, States.Bayern, States.SachsenAnhalt);
+            yield return new GermanHoliday(true, new DateTime(year, 1, 6), Properties.Resources.holyKings, Provinces.BadenWuerttemberg, Provinces.Bayern, Provinces.SachsenAnhalt);
             yield return new GermanHoliday(true, new DateTime(year, 5, 1), Properties.Resources.laborDay);
-            yield return new GermanHoliday(true, new DateTime(year, 8, 15), Properties.Resources.assumptionDay, States.Saarland);
+            yield return new GermanHoliday(true, new DateTime(year, 8, 15), Properties.Resources.assumptionDay, Provinces.Saarland);
             yield return new GermanHoliday(true, new DateTime(year, 10, 3), Properties.Resources.unityDay);
-            yield return new GermanHoliday(true, new DateTime(year, 10, 31), Properties.Resources.refomationDay, States.Hamburg, States.Brandenburg, States.Bremen, States.MecklenburgVorpommern, States.Niedersachsen, States.Sachsen, States.SachsenAnhalt, States.Thueringen, States.SchleswigHolstein);
-            yield return new GermanHoliday(true, new DateTime(year, 11, 1), Properties.Resources.allSaints, States.Bayern, States.RheinlandPfalz, States.BadenWuerttemberg, States.Saarland, States.NordrheinWestfalen);
+            yield return new GermanHoliday(true, new DateTime(year, 10, 31), Properties.Resources.refomationDay, Provinces.Hamburg, Provinces.Brandenburg, Provinces.Bremen, Provinces.MecklenburgVorpommern, Provinces.Niedersachsen, Provinces.Sachsen, Provinces.SachsenAnhalt, Provinces.Thueringen, Provinces.SchleswigHolstein);
+            yield return new GermanHoliday(true, new DateTime(year, 11, 1), Properties.Resources.allSaints, Provinces.Bayern, Provinces.RheinlandPfalz, Provinces.BadenWuerttemberg, Provinces.Saarland, Provinces.NordrheinWestfalen);
             yield return new GermanHoliday(true, new DateTime(year, 12, 24), Properties.Resources.christmasEve);
             yield return new GermanHoliday(true, new DateTime(year, 12, 25), Properties.Resources.firstChristmas);
             yield return new GermanHoliday(true, new DateTime(year, 12, 26), Properties.Resources.secondChristmas);
@@ -32,7 +32,7 @@ namespace mitoSoft.Holidays
             yield return new GermanHoliday(false, osterSonntag.AddDays(39), Properties.Resources.ascensionOfChrist);
             yield return new GermanHoliday(false, osterSonntag.AddDays(49), Properties.Resources.pentecostSunday);
             yield return new GermanHoliday(false, osterSonntag.AddDays(50), Properties.Resources.whitMonday);
-            yield return new GermanHoliday(false, osterSonntag.AddDays(60), Properties.Resources.corpusChristi, States.BadenWuerttemberg, States.Bayern, States.RheinlandPfalz, States.Hessen, States.NordrheinWestfalen, States.Saarland);
+            yield return new GermanHoliday(false, osterSonntag.AddDays(60), Properties.Resources.corpusChristi, Provinces.BadenWuerttemberg, Provinces.Bayern, Provinces.RheinlandPfalz, Provinces.Hessen, Provinces.NordrheinWestfalen, Provinces.Saarland);
         }
 
         private static DateTime GetOsterSonntag(int year)
