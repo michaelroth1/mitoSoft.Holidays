@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 namespace mitoSoft.Holidays.Tests.DouglasAdams;
+
 internal sealed class Holidays : Holidays<Places>
 {
     public override IEnumerable<Holiday<Places>> GetHolidays(int year)
