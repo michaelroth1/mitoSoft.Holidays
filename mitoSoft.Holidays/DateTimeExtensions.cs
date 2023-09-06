@@ -5,7 +5,7 @@ namespace mitoSoft.Holidays
 {
     public static class DateTimeExtensions
     {
-        public static HolidayBase<T> GetHoliday<T>(this DateTime actualDate, HolidaysBase<T> holidays)
+        public static Holiday<T> GetHoliday<T>(this DateTime actualDate, Holidays<T> holidays)
             where T : struct, Enum
         {
             var allHolidays = holidays.GetHolidays(actualDate.Year);
@@ -15,7 +15,7 @@ namespace mitoSoft.Holidays
             return holiday;
         }
 
-        public static bool IsHoliday<T>(this DateTime actualDate, HolidaysBase<T> holidays, T province)
+        public static bool IsHoliday<T>(this DateTime actualDate, Holidays<T> holidays, T province)
             where T : struct, Enum
         {
             var holiday = actualDate.GetHoliday(holidays);
@@ -25,7 +25,7 @@ namespace mitoSoft.Holidays
             return isHoliday;
         }
 
-        public static bool IsHoliday<T>(this HolidayBase<T> holiday, T province)
+        public static bool IsHoliday<T>(this Holiday<T> holiday, T province)
             where T : struct, Enum
         {
             if (holiday == null)
@@ -42,7 +42,8 @@ namespace mitoSoft.Holidays
             }
         }
 
-        private static bool HasFlag(Enum sourceEnum, Enum targetEnum)
+        private static bool HasFlag<T>(T sourceEnum, T targetEnum)
+            where T : struct, Enum
         {
             var sourceULong = Convert.ToUInt64(sourceEnum);
 

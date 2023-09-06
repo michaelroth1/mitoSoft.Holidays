@@ -4,7 +4,7 @@ using System.Resources;
 
 namespace mitoSoft.Holidays
 {
-    public abstract class HolidayBase<T> : IComparable<HolidayBase<T>>
+    public class Holiday<T> : IComparable<Holiday<T>>, IEquatable<Holiday<T>>
         where T : struct, Enum
     {
         private readonly ResourceManager _resourceManager;
@@ -30,7 +30,7 @@ namespace mitoSoft.Holidays
         /// <summary />
         public T Provinces { get; }
 
-        protected HolidayBase(string name
+        public Holiday(string name
             , DateTime originalDate
             , DateTime actualDate
             , bool isFixedDate
@@ -45,8 +45,11 @@ namespace mitoSoft.Holidays
             _resourceManager = resourceManager ?? Resources.ResourceManager;
         }
 
-        public int CompareTo(HolidayBase<T> other)
+        public virtual int CompareTo(Holiday<T> other)
            => this.ActualDate.Date.CompareTo(other?.ActualDate.Date ?? DateTime.MaxValue);
+
+        public virtual bool Equals(Holiday<T> other)
+            => this.ActualDate.Date == other?.ActualDate.Date;
 
         public virtual string GetDisplayName(CultureInfo cultureInfo = null)
         {

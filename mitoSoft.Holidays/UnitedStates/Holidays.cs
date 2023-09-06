@@ -6,9 +6,9 @@ namespace mitoSoft.Holidays.UnitedStates
     /// <summary>
     /// https://en.wikipedia.org/wiki/Federal_holidays_in_the_United_States
     /// </summary>
-    public sealed class Holidays : HolidaysBase<States>
+    public sealed class Holidays : Holidays<States>
     {
-        public override IEnumerable<HolidayBase<States>> GetHolidays(int year)
+        public override IEnumerable<Holiday<States>> GetHolidays(int year)
         {
             yield return new Holiday(nameof(Resources.NewYearsDay), new DateTime(year, 1, 1), true, States.National);
             yield return new Holiday(nameof(Resources.MartinLutherKingJrDay), GetXthWeekDay(year, 1, DayOfWeek.Monday, 3), false, States.National);

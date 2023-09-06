@@ -2,7 +2,7 @@
 
 namespace mitoSoft.Holidays.UnitedStates
 {
-    public class Holiday : HolidayBase<States>, IComparable<Holiday>
+    public sealed class Holiday : Holiday<States>, IComparable<Holiday>, IEquatable<Holiday>
     {
         public Holiday(string name, DateTime originalDate, bool isFix, States states = States.National)
             : base(name, originalDate, GetActualDate(originalDate), isFix, states)
@@ -10,7 +10,10 @@ namespace mitoSoft.Holidays.UnitedStates
         }
 
         public int CompareTo(Holiday other)
-            => ActualDate.Date.CompareTo(other?.ActualDate.Date ?? DateTime.MaxValue);
+            => this.ActualDate.Date.CompareTo(other?.ActualDate.Date ?? DateTime.MaxValue);
+
+        public bool Equals(Holiday other)
+            => this.ActualDate.Date == other?.ActualDate.Date;
 
         private static DateTime GetActualDate(DateTime originalDate)
         {

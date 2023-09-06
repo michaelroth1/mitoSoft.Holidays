@@ -6,7 +6,7 @@ using mitoSoft.Holidays.Germany;
 namespace mitoSoft.Holidays.Tests
 {
     [TestClass]
-    public class GermanTests
+    public sealed class GermanTests
     {
         [TestMethod]
         [TestCategory("IsHoliday")]

@@ -7,9 +7,9 @@ namespace mitoSoft.Holidays.Germany
     /// https://dotnet-snippets.de/snippet/ermittlung-von-feiertagen-feiertaglogic/763
     /// https://www.feiertage.net/bundeslaender.php
     /// </summary>
-    public sealed class Holidays : HolidaysBase<Bundeslaender>
+    public sealed class Holidays : Holidays<Bundeslaender>
     {
-        public override IEnumerable<HolidayBase<Bundeslaender>> GetHolidays(int year)
+        public override IEnumerable<Holiday<Bundeslaender>> GetHolidays(int year)
         {
             var easterSunday = EasterSunday.GetEasterSunday(year);
 

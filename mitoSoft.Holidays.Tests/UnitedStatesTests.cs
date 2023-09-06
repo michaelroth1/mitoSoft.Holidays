@@ -6,7 +6,7 @@ using mitoSoft.Holidays.UnitedStates;
 namespace mitoSoft.Holidays.Tests
 {
     [TestClass]
-    public class UnitedStatesTests
+    public sealed class UnitedStatesTests
     {
         private static readonly UnitedStates.Holidays _holidays = new();
 
@@ -57,8 +57,8 @@ namespace mitoSoft.Holidays.Tests
             Assert.AreEqual(new DateTime(expectedActualDate.Year, 12, 25), christmasDay.OriginalDate);
         }
 
-        private static HolidayBase<States> AssertAreEqual(DateTime expectedActualDate
-            , Func<int, HolidayBase<States>> getDay)
+        private static Holiday AssertAreEqual(DateTime expectedActualDate
+            , Func<int, Holiday> getDay)
         {
             var holiday = getDay(expectedActualDate.Year);
 
@@ -67,19 +67,19 @@ namespace mitoSoft.Holidays.Tests
             return holiday;
         }
 
-        private static HolidayBase<States> GetChristmasDay(int year)
+        private static Holiday GetChristmasDay(int year)
             => GetHolidayDay(year, nameof(Resources.ChristmasDay));
 
-        private static HolidayBase<States> GetThanksgiving(int year)
+        private static Holiday GetThanksgiving(int year)
             => GetHolidayDay(year, nameof(Resources.ThanksgivingDay));
 
-        private static HolidayBase<States> GetMemorialDay(int year)
+        private static Holiday GetMemorialDay(int year)
             => GetHolidayDay(year, nameof(Resources.UnitedStatesMemorialDay));
 
-        private static HolidayBase<States> GetLaborDay(int year)
+        private static Holiday GetLaborDay(int year)
             => GetHolidayDay(year, nameof(Resources.LaborDay));
 
-        private static HolidayBase<States> GetHolidayDay(int year, string name)
-            => _holidays.GetHolidays(year).First(h => h.Name == name);
+        private static Holiday GetHolidayDay(int year, string name)
+            => (Holiday)_holidays.GetHolidays(year).First(h => h.Name == name);
     }
 }
