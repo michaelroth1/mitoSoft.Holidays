@@ -126,6 +126,12 @@
   <data name="assumptionDay" xml:space="preserve">
     <value>Maria Himmelfahrt</value>
   </data>
+  <data name="boxingDay" xml:space="preserve">
+    <value>2. Weihnachtstag</value>
+  </data>
+  <data name="christmasDay" xml:space="preserve">
+    <value>1. Weihnachtstag</value>
+  </data>
   <data name="christmasEve" xml:space="preserve">
     <value>Heilig Abend</value>
   </data>
@@ -138,17 +144,23 @@
   <data name="easterMonday" xml:space="preserve">
     <value>Ostermontag</value>
   </data>
-  <data name="firstChristmas" xml:space="preserve">
-    <value>1. Weihnachtstag</value>
+  <data name="epiphany" xml:space="preserve">
+    <value>Heilige Drei Könige</value>
+  </data>
+  <data name="germanUnityDay" xml:space="preserve">
+    <value>Tag der dt. Einheit</value>
   </data>
   <data name="goodFriday" xml:space="preserve">
     <value>Karfreitag</value>
   </data>
-  <data name="holyKings" xml:space="preserve">
-    <value>Heilige Drei Könige</value>
+  <data name="internationalWomensDay" xml:space="preserve">
+    <value>Internationaler Frauentag</value>
   </data>
   <data name="laborDay" xml:space="preserve">
     <value>Tag der Arbeit</value>
+  </data>
+  <data name="lutherRefomationDay" xml:space="preserve">
+    <value>Reformationstag</value>
   </data>
   <data name="maundyThursday" xml:space="preserve">
     <value>Gründonnerstag</value>
@@ -158,15 +170,6 @@
   </data>
   <data name="pentecostSunday" xml:space="preserve">
     <value>Pfingstsonntag</value>
-  </data>
-  <data name="refomationDay" xml:space="preserve">
-    <value>Reformationstag</value>
-  </data>
-  <data name="secondChristmas" xml:space="preserve">
-    <value>2. Weihnachtstag</value>
-  </data>
-  <data name="unityDay" xml:space="preserve">
-    <value>Tag der dt. Einheit</value>
   </data>
   <data name="whitMonday" xml:space="preserve">
     <value>Pfingstmontag</value>

@@ -2,36 +2,14 @@
 
 namespace mitoSoft.Holidays.Models
 {
-    public class GermanHoliday : IComparable<GermanHoliday>
+    public class GermanHoliday : HolidayBase<GermanBundeslaender>, IComparable<GermanHoliday>
     {
-        public GermanHoliday(bool isFix, DateTime datum, string name, params Provinces[] federalProvinces)
+        public GermanHoliday(string name, DateTime date, bool isFix, GermanBundeslaender bundeslaender = GermanBundeslaender.National)
+            : base(name, date, date, isFix, bundeslaender)
         {
-            this.IsFix = isFix;
-            this.Date = datum;
-            this.Name = name;
-            this.FederalProvinces = federalProvinces;
         }
-
-        /// <summary>
-        /// Beschreibung: 
-        /// </summary>
-        public string Name { get; }
-
-        public Provinces[] FederalProvinces { get; }
-
-        /// <summary>
-        /// Beschreibung: 
-        /// </summary>
-        public DateTime Date { get; }
-
-        /// <summary>
-        /// Beschreibung: 
-        /// </summary>
-        public bool IsFix { get; }
 
         public int CompareTo(GermanHoliday other)
-        {
-            return this.Date.Date.CompareTo(other.Date.Date);
-        }
+            => this.ActualDate.Date.CompareTo(other?.ActualDate.Date ?? DateTime.MaxValue);
     }
 }
