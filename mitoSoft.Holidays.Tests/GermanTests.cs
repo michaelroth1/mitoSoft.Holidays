@@ -14,9 +14,9 @@ namespace mitoSoft.Holidays.Tests
         {
             var date = new DateTime(2019, 11, 1);
 
-            Assert.AreEqual(true, date.IsGermanHoliday(GermanBundeslaender.RheinlandPfalz));
-            Assert.AreEqual(false, date.IsGermanHoliday(GermanBundeslaender.National));
-            Assert.AreEqual(false, date.IsGermanHoliday(GermanBundeslaender.Bremen));
+            Assert.AreEqual(true, date.IsGermanHoliday(Bundeslaender.RheinlandPfalz));
+            Assert.AreEqual(false, date.IsGermanHoliday(Bundeslaender.National));
+            Assert.AreEqual(false, date.IsGermanHoliday(Bundeslaender.Bremen));
         }
 
         [TestMethod]
@@ -25,8 +25,8 @@ namespace mitoSoft.Holidays.Tests
         {
             var date = new DateTime(2019, 12, 25);
 
-            Assert.AreEqual(true, date.IsGermanHoliday(GermanBundeslaender.RheinlandPfalz));
-            Assert.AreEqual(true, date.IsGermanHoliday(GermanBundeslaender.National));
+            Assert.AreEqual(true, date.IsGermanHoliday(Bundeslaender.RheinlandPfalz));
+            Assert.AreEqual(true, date.IsGermanHoliday(Bundeslaender.National));
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("de");
             Assert.AreEqual("ChristmasDay", date.GetGermanHoliday().Name);
             Assert.AreEqual("1. Weihnachtsfeiertag", date.GetGermanHoliday().GetDisplayName());
@@ -49,8 +49,8 @@ namespace mitoSoft.Holidays.Tests
         {
             var date = new DateTime(2021, 4, 4);
 
-            Assert.AreEqual(true, date.IsGermanHoliday(GermanBundeslaender.NordrheinWestfalen));
-            Assert.AreEqual(true, date.IsGermanHoliday(GermanBundeslaender.National));
+            Assert.AreEqual(true, date.IsGermanHoliday(Bundeslaender.NordrheinWestfalen));
+            Assert.AreEqual(true, date.IsGermanHoliday(Bundeslaender.National));
         }
 
         [TestMethod]
@@ -59,7 +59,7 @@ namespace mitoSoft.Holidays.Tests
         {
             var date = new DateTime(2019, 12, 23);
 
-            Assert.AreEqual(false, date.IsGermanHoliday(GermanBundeslaender.RheinlandPfalz));
+            Assert.AreEqual(false, date.IsGermanHoliday(Bundeslaender.RheinlandPfalz));
         }
 
         [TestMethod]
@@ -68,9 +68,9 @@ namespace mitoSoft.Holidays.Tests
         {
             var date = new DateTime(2019, 10, 31);
 
-            Assert.AreEqual(false, date.IsGermanHoliday(GermanBundeslaender.National));
-            Assert.AreEqual(true, date.IsGermanHoliday(GermanBundeslaender.Brandenburg));
-            Assert.AreEqual(false, date.IsGermanHoliday(GermanBundeslaender.Berlin));
+            Assert.AreEqual(false, date.IsGermanHoliday(Bundeslaender.National));
+            Assert.AreEqual(true, date.IsGermanHoliday(Bundeslaender.Brandenburg));
+            Assert.AreEqual(false, date.IsGermanHoliday(Bundeslaender.Berlin));
         }
     }
 }

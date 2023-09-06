@@ -3,7 +3,7 @@
 namespace mitoSoft.Holidays.UnitedStates
 {
     [Flags]
-    public enum UnitedStatesStates : ulong
+    public enum States : ulong
     {
         None = 0,
 
@@ -57,6 +57,7 @@ namespace mitoSoft.Holidays.UnitedStates
         WestVirginia = 1UL << 47,
         Wisconsin = 1UL << 48,
         Wyoming = 1UL << 49,
+
         DistrictOfColumbia = 1UL << 50,
 
         National = Alabama | Alaska | Arizona | Arkansas

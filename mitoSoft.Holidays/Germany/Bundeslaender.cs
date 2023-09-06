@@ -3,7 +3,7 @@
 namespace mitoSoft.Holidays.Germany
 {
     [Flags]
-    public enum GermanBundeslaender : ulong
+    public enum Bundeslaender : ulong
     {
         None = 0,
 

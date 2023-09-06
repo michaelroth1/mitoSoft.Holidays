@@ -4,14 +4,14 @@ namespace mitoSoft.Holidays.Germany
 {
     public static class DateTimeExtensions
     {
-        public static GermanHoliday GetGermanHoliday(this DateTime actualDate)
+        public static Holiday GetGermanHoliday(this DateTime actualDate)
         {
-            var holiday = actualDate.GetHoliday(new GermanHolidays()) as GermanHoliday;
+            var holiday = actualDate.GetHoliday(new Holidays()) as Holiday;
 
             return holiday;
         }
 
-        public static bool IsGermanHoliday(this DateTime actualDate, GermanBundeslaender bundeslaender = GermanBundeslaender.National)
+        public static bool IsGermanHoliday(this DateTime actualDate, Bundeslaender bundeslaender = Bundeslaender.National)
         {
             var holiday = actualDate.GetGermanHoliday();
 
