@@ -61,16 +61,11 @@ namespace mitoSoft.Holidays.Extensions
 
         private static bool HasFlag(Enum sourceEnum, Enum targetEnum)
         {
-            if (!sourceEnum.GetType().IsEquivalentTo(targetEnum.GetType()))
-            {
-                throw new ArgumentException("EnumTypeDoesNotMatch");
-            }
-
-            var sourceUlong = Convert.ToUInt64(sourceEnum);
+            var sourceULong = Convert.ToUInt64(sourceEnum);
 
             var targetULong = Convert.ToUInt64(targetEnum);
 
-            var hasFlag = (sourceUlong & targetULong) == targetULong;
+            var hasFlag = (sourceULong & targetULong) == targetULong;
 
             return hasFlag;
         }
