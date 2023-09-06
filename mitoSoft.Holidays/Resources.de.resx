@@ -117,61 +117,64 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="allSaints" xml:space="preserve">
+  <data name="AllSaintsDay" xml:space="preserve">
     <value>Allerheiligen</value>
   </data>
-  <data name="ascensionOfChrist" xml:space="preserve">
-    <value>Christi Himmelfahrt</value>
-  </data>
-  <data name="assumptionDay" xml:space="preserve">
+  <data name="AssumptionOfMary" xml:space="preserve">
     <value>Maria Himmelfahrt</value>
   </data>
-  <data name="boxingDay" xml:space="preserve">
-    <value>2. Weihnachtstag</value>
+  <data name="BoxingDay" xml:space="preserve">
+    <value>2. Weihnachtsfeiertag</value>
   </data>
-  <data name="christmasDay" xml:space="preserve">
-    <value>1. Weihnachtstag</value>
+  <data name="ChristmasDay" xml:space="preserve">
+    <value>1. Weihnachtsfeiertag</value>
   </data>
-  <data name="christmasEve" xml:space="preserve">
+  <data name="ChristmasEve" xml:space="preserve">
     <value>Heilig Abend</value>
   </data>
-  <data name="corpusChristi" xml:space="preserve">
-    <value>Fronleichnam</value>
-  </data>
-  <data name="easter" xml:space="preserve">
-    <value>Ostersonntag</value>
-  </data>
-  <data name="easterMonday" xml:space="preserve">
+  <data name="EasterMonday" xml:space="preserve">
     <value>Ostermontag</value>
   </data>
-  <data name="epiphany" xml:space="preserve">
+  <data name="EasterSunday" xml:space="preserve">
+    <value>Ostersonntag</value>
+  </data>
+  <data name="Epiphany" xml:space="preserve">
     <value>Heilige Drei Könige</value>
   </data>
-  <data name="germanUnityDay" xml:space="preserve">
-    <value>Tag der dt. Einheit</value>
+  <data name="FeastOfCorpusChristi" xml:space="preserve">
+    <value>Fronleichnam</value>
   </data>
-  <data name="goodFriday" xml:space="preserve">
+  <data name="FeastOfTheAscension" xml:space="preserve">
+    <value>Christi Himmelfahrt</value>
+  </data>
+  <data name="GermanUnityDay" xml:space="preserve">
+    <value>Tag der deutschen Einheit</value>
+  </data>
+  <data name="GoodFriday" xml:space="preserve">
     <value>Karfreitag</value>
   </data>
-  <data name="internationalWomensDay" xml:space="preserve">
+  <data name="InternationalWomensDay" xml:space="preserve">
     <value>Internationaler Frauentag</value>
   </data>
-  <data name="laborDay" xml:space="preserve">
+  <data name="LaborDay" xml:space="preserve">
     <value>Tag der Arbeit</value>
   </data>
-  <data name="lutherRefomationDay" xml:space="preserve">
+  <data name="LutherRefomationDay" xml:space="preserve">
     <value>Reformationstag</value>
   </data>
-  <data name="maundyThursday" xml:space="preserve">
+  <data name="MaundyThursday" xml:space="preserve">
     <value>Gründonnerstag</value>
   </data>
-  <data name="newyear" xml:space="preserve">
+  <data name="NewYearsDay" xml:space="preserve">
     <value>Neujahr</value>
   </data>
-  <data name="pentecostSunday" xml:space="preserve">
+  <data name="NewYearsEve" xml:space="preserve">
+    <value>Silvester</value>
+  </data>
+  <data name="PentecostSunday" xml:space="preserve">
     <value>Pfingstsonntag</value>
   </data>
-  <data name="whitMonday" xml:space="preserve">
+  <data name="WhitMonday" xml:space="preserve">
     <value>Pfingstmontag</value>
   </data>
 </root>

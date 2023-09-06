@@ -1,25 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup Label="Globals">
-		<SccProjectName>SAK</SccProjectName>
-		<SccProvider>SAK</SccProvider>
-		<SccAuxPath>SAK</SccAuxPath>
-		<SccLocalPath>SAK</SccLocalPath>
-	</PropertyGroup>
-
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<RootNamespace>mitoSoft.Holidays</RootNamespace>
 		<AssemblyName>mitoSoft.Holidays</AssemblyName>
 		<Authors>mitoSoft</Authors>
-		<Version>2.0.0-alpha</Version>
+		<Version>2.0.1</Version>
 		<Copyright>(c) mitoSoft</Copyright>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageProjectUrl>https://github.com/michaelroth1/mitoSoft.Holidays</PackageProjectUrl>
 		<PackageIcon>mitoSoft.png</PackageIcon>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<Description>A lightweight .net library for determining german holidays</Description>
-		<PackageTags>german holidays; deutsche feiertage</PackageTags>
+		<PackageTags>german holidays; deutsche feiertage; us-american holidays</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -34,7 +27,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Compile Update="Properties\Resources.Designer.cs">
+		<Compile Update="Resources.Designer.cs">
 			<DesignTime>True</DesignTime>
 			<AutoGen>True</AutoGen>
 			<DependentUpon>Resources.resx</DependentUpon>
@@ -42,11 +35,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<EmbeddedResource Update="Properties\Resources.resx">
-			<Generator>ResXFileCodeGenerator</Generator>
+		<EmbeddedResource Update="Resources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
 			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
 		</EmbeddedResource>
-		<EmbeddedResource Update="Properties\Resources.de.resx">
+		<EmbeddedResource Update="Resources.de.resx">
 			<DependentUpon>Resources.resx</DependentUpon>
 		</EmbeddedResource>
 	</ItemGroup>

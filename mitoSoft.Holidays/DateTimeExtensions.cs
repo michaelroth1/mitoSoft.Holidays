@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Linq;
-using mitoSoft.Holidays.Models;
 
-namespace mitoSoft.Holidays.Extensions
+namespace mitoSoft.Holidays
 {
     public static class DateTimeExtensions
     {
@@ -21,28 +20,12 @@ namespace mitoSoft.Holidays.Extensions
         {
             var holiday = actualDate.GetHoliday(holidays);
 
-            var isHoliday = IsHoliday(holiday, province);
+            var isHoliday = holiday.IsHoliday(province);
 
             return isHoliday;
         }
 
-        public static GermanHoliday GetGermanHoliday(this DateTime actualDate)
-        {
-            var holiday = actualDate.GetHoliday(new GermanHolidays()) as GermanHoliday;
-
-            return holiday;
-        }
-
-        public static bool IsGermanHoliday(this DateTime actualDate, GermanBundeslaender bundesland = GermanBundeslaender.National)
-        {
-            var holiday = actualDate.GetGermanHoliday();
-
-            var isHoliday = IsHoliday(holiday, bundesland);
-
-            return isHoliday;
-        }
-
-        private static bool IsHoliday<T>(HolidayBase<T> holiday, T province)
+        public static bool IsHoliday<T>(this HolidayBase<T> holiday, T province)
             where T : struct, Enum
         {
             if (holiday == null)

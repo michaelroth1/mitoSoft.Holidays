@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace mitoSoft.Holidays.Models
+namespace mitoSoft.Holidays.Germany
 {
     public class GermanHoliday : HolidayBase<GermanBundeslaender>, IComparable<GermanHoliday>
     {
@@ -10,6 +10,6 @@ namespace mitoSoft.Holidays.Models
         }
 
         public int CompareTo(GermanHoliday other)
-            => this.ActualDate.Date.CompareTo(other?.ActualDate.Date ?? DateTime.MaxValue);
+            => ActualDate.Date.CompareTo(other?.ActualDate.Date ?? DateTime.MaxValue);
     }
 }

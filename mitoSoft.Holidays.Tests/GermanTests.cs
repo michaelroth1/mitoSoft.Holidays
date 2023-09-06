@@ -1,7 +1,7 @@
 using System;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using mitoSoft.Holidays.Extensions;
+using mitoSoft.Holidays.Germany;
 
 namespace mitoSoft.Holidays.Tests
 {
@@ -15,7 +15,7 @@ namespace mitoSoft.Holidays.Tests
             var date = new DateTime(2019, 11, 1);
 
             Assert.AreEqual(true, date.IsGermanHoliday(GermanBundeslaender.RheinlandPfalz));
-
+            Assert.AreEqual(false, date.IsGermanHoliday(GermanBundeslaender.National));
             Assert.AreEqual(false, date.IsGermanHoliday(GermanBundeslaender.Bremen));
         }
 
@@ -26,14 +26,21 @@ namespace mitoSoft.Holidays.Tests
             var date = new DateTime(2019, 12, 25);
 
             Assert.AreEqual(true, date.IsGermanHoliday(GermanBundeslaender.RheinlandPfalz));
+            Assert.AreEqual(true, date.IsGermanHoliday(GermanBundeslaender.National));
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("de");
-            Assert.AreEqual("1. Weihnachtstag", date.GetGermanHoliday().Name);
+            Assert.AreEqual("ChristmasDay", date.GetGermanHoliday().Name);
+            Assert.AreEqual("1. Weihnachtsfeiertag", date.GetGermanHoliday().GetDisplayName());
+            Assert.AreEqual("1. Weihnachtsfeiertag", date.GetGermanHoliday().GetDisplayName(Thread.CurrentThread.CurrentUICulture));
 
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fr");
-            Assert.AreEqual("Christmas Day", date.GetGermanHoliday().Name);
+            Assert.AreEqual("ChristmasDay", date.GetGermanHoliday().Name);
+            Assert.AreEqual("Christmas Day", date.GetGermanHoliday().GetDisplayName());
+            Assert.AreEqual("Christmas Day", date.GetGermanHoliday().GetDisplayName(Thread.CurrentThread.CurrentUICulture));
 
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
-            Assert.AreEqual("Christmas Day", date.GetGermanHoliday().Name);
+            Assert.AreEqual("ChristmasDay", date.GetGermanHoliday().Name);
+            Assert.AreEqual("Christmas Day", date.GetGermanHoliday().GetDisplayName());
+            Assert.AreEqual("Christmas Day", date.GetGermanHoliday().GetDisplayName(Thread.CurrentThread.CurrentUICulture));
         }
 
         [TestMethod]
@@ -43,6 +50,7 @@ namespace mitoSoft.Holidays.Tests
             var date = new DateTime(2021, 4, 4);
 
             Assert.AreEqual(true, date.IsGermanHoliday(GermanBundeslaender.NordrheinWestfalen));
+            Assert.AreEqual(true, date.IsGermanHoliday(GermanBundeslaender.National));
         }
 
         [TestMethod]

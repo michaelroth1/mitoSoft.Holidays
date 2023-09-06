@@ -117,61 +117,91 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="allSaints" xml:space="preserve">
+  <data name="AllSaintsDay" xml:space="preserve">
     <value>All Saints' Day</value>
   </data>
-  <data name="ascensionOfChrist" xml:space="preserve">
-    <value>Feast of the Ascension</value>
-  </data>
-  <data name="assumptionDay" xml:space="preserve">
+  <data name="AssumptionOfMary" xml:space="preserve">
     <value>Assumption of Mary</value>
   </data>
-  <data name="boxingDay" xml:space="preserve">
+  <data name="BoxingDay" xml:space="preserve">
     <value>Boxing Day</value>
   </data>
-  <data name="christmasDay" xml:space="preserve">
+  <data name="ChristmasDay" xml:space="preserve">
     <value>Christmas Day</value>
   </data>
-  <data name="christmasEve" xml:space="preserve">
+  <data name="ChristmasEve" xml:space="preserve">
     <value>Christmas Eve</value>
   </data>
-  <data name="corpusChristi" xml:space="preserve">
-    <value>Feast of Corpus Christi</value>
+  <data name="ColumbusDay" xml:space="preserve">
+    <value>Columbus Day</value>
   </data>
-  <data name="easter" xml:space="preserve">
-    <value>Easter Sunday</value>
-  </data>
-  <data name="easterMonday" xml:space="preserve">
+  <data name="EasterMonday" xml:space="preserve">
     <value>Easter Monday</value>
   </data>
-  <data name="epiphany" xml:space="preserve">
+  <data name="EasterSunday" xml:space="preserve">
+    <value>Easter Sunday</value>
+  </data>
+  <data name="Epiphany" xml:space="preserve">
     <value>Epiphany</value>
   </data>
-  <data name="germanUnityDay" xml:space="preserve">
+  <data name="FeastOfCorpusChristi" xml:space="preserve">
+    <value>Feast of Corpus Christi</value>
+  </data>
+  <data name="FeastOfTheAscension" xml:space="preserve">
+    <value>Feast of the Ascension</value>
+  </data>
+  <data name="GeorgeWashingtonsBirthday" xml:space="preserve">
+    <value>Washington's Birthday</value>
+  </data>
+  <data name="GermanUnityDay" xml:space="preserve">
     <value>German Unity Day</value>
   </data>
-  <data name="goodFriday" xml:space="preserve">
+  <data name="GoodFriday" xml:space="preserve">
     <value>Good Friday</value>
   </data>
-  <data name="internationalWomensDay" xml:space="preserve">
+  <data name="IndigenousPeoplesDay" xml:space="preserve">
+    <value>Indigenous Peoples' Day</value>
+  </data>
+  <data name="InternationalWomensDay" xml:space="preserve">
     <value>International Women's Day</value>
   </data>
-  <data name="laborDay" xml:space="preserve">
+  <data name="JuneteenthNationalIndependenceDay" xml:space="preserve">
+    <value>Juneteenth National Independence Day</value>
+  </data>
+  <data name="LaborDay" xml:space="preserve">
     <value>labor day</value>
   </data>
-  <data name="lutherRefomationDay" xml:space="preserve">
+  <data name="LutherRefomationDay" xml:space="preserve">
     <value>Luther Reformation Day</value>
   </data>
-  <data name="maundyThursday" xml:space="preserve">
+  <data name="MartinLutherKingJrDay" xml:space="preserve">
+    <value>Martin Luther King Jr. Day</value>
+  </data>
+  <data name="MaundyThursday" xml:space="preserve">
     <value>Maundy Thursday</value>
   </data>
-  <data name="newyear" xml:space="preserve">
+  <data name="NewYearsDay" xml:space="preserve">
+    <value>New Year's Day</value>
+  </data>
+  <data name="NewYearsEve" xml:space="preserve">
     <value>New Year's Eve</value>
   </data>
-  <data name="pentecostSunday" xml:space="preserve">
+  <data name="PentecostSunday" xml:space="preserve">
     <value>Pentecost Sunday</value>
   </data>
-  <data name="whitMonday" xml:space="preserve">
+  <data name="ThanksgivingDay" xml:space="preserve">
+    <value>Thanksgiving Day</value>
+  </data>
+  <data name="UnitedStatesIndependenceDay" xml:space="preserve">
+    <value>Independence Day</value>
+  </data>
+  <data name="UnitedStatesMemorialDay" xml:space="preserve">
+    <value>Memorial Day</value>
+  </data>
+  <data name="VeteransDay" xml:space="preserve">
+    <value>Veterans Day</value>
+  </data>
+  <data name="WhitMonday" xml:space="preserve">
     <value>Whit Monday</value>
   </data>
 </root>
