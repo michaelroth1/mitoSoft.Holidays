@@ -1,7 +1,9 @@
 name: publish Holidays
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+  workflow_dispatch:
     
 jobs:
   publish:
