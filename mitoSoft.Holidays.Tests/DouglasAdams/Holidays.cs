@@ -7,8 +7,6 @@ internal sealed class Holidays : Holidays<Places>
 {
     public override IEnumerable<Holiday<Places>> GetHolidays(int year)
     {
-        var date = new DateTime(year, 5, 25);
-
-        yield return new Holiday<Places>(nameof(Resources.TowelDay), date, date, true, Places.Earth, Resources.ResourceManager);
+        yield return new Holiday(nameof(Resources.TowelDay), new DateTime(year, 5, 25), true, Places.Earth);
     }
 }

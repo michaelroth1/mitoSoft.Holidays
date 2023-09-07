@@ -22,7 +22,7 @@ namespace mitoSoft.Holidays {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Resources {
+    internal class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace mitoSoft.Holidays {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("mitoSoft.Holidays.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace mitoSoft.Holidays {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to All Saints&apos; Day.
         /// </summary>
-        public static string AllSaintsDay {
+        internal static string AllSaintsDay {
             get {
                 return ResourceManager.GetString("AllSaintsDay", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to Assumption of Mary.
         /// </summary>
-        public static string AssumptionOfMary {
+        internal static string AssumptionOfMary {
             get {
                 return ResourceManager.GetString("AssumptionOfMary", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to Boxing Day.
         /// </summary>
-        public static string BoxingDay {
+        internal static string BoxingDay {
             get {
                 return ResourceManager.GetString("BoxingDay", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to Christmas Day.
         /// </summary>
-        public static string ChristmasDay {
+        internal static string ChristmasDay {
             get {
                 return ResourceManager.GetString("ChristmasDay", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to Christmas Eve.
         /// </summary>
-        public static string ChristmasEve {
+        internal static string ChristmasEve {
             get {
                 return ResourceManager.GetString("ChristmasEve", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to Columbus Day.
         /// </summary>
-        public static string ColumbusDay {
+        internal static string ColumbusDay {
             get {
                 return ResourceManager.GetString("ColumbusDay", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to Easter Monday.
         /// </summary>
-        public static string EasterMonday {
+        internal static string EasterMonday {
             get {
                 return ResourceManager.GetString("EasterMonday", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to Easter Sunday.
         /// </summary>
-        public static string EasterSunday {
+        internal static string EasterSunday {
             get {
                 return ResourceManager.GetString("EasterSunday", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to Epiphany.
         /// </summary>
-        public static string Epiphany {
+        internal static string Epiphany {
             get {
                 return ResourceManager.GetString("Epiphany", resourceCulture);
             }
@@ -144,7 +144,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to Feast of Corpus Christi.
         /// </summary>
-        public static string FeastOfCorpusChristi {
+        internal static string FeastOfCorpusChristi {
             get {
                 return ResourceManager.GetString("FeastOfCorpusChristi", resourceCulture);
             }
@@ -153,7 +153,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to Feast of the Ascension.
         /// </summary>
-        public static string FeastOfTheAscension {
+        internal static string FeastOfTheAscension {
             get {
                 return ResourceManager.GetString("FeastOfTheAscension", resourceCulture);
             }
@@ -162,7 +162,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to Washington&apos;s Birthday.
         /// </summary>
-        public static string GeorgeWashingtonsBirthday {
+        internal static string GeorgeWashingtonsBirthday {
             get {
                 return ResourceManager.GetString("GeorgeWashingtonsBirthday", resourceCulture);
             }
@@ -171,7 +171,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to German Unity Day.
         /// </summary>
-        public static string GermanUnityDay {
+        internal static string GermanUnityDay {
             get {
                 return ResourceManager.GetString("GermanUnityDay", resourceCulture);
             }
@@ -180,7 +180,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to Good Friday.
         /// </summary>
-        public static string GoodFriday {
+        internal static string GoodFriday {
             get {
                 return ResourceManager.GetString("GoodFriday", resourceCulture);
             }
@@ -189,7 +189,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to Indigenous Peoples&apos; Day.
         /// </summary>
-        public static string IndigenousPeoplesDay {
+        internal static string IndigenousPeoplesDay {
             get {
                 return ResourceManager.GetString("IndigenousPeoplesDay", resourceCulture);
             }
@@ -198,7 +198,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to International Women&apos;s Day.
         /// </summary>
-        public static string InternationalWomensDay {
+        internal static string InternationalWomensDay {
             get {
                 return ResourceManager.GetString("InternationalWomensDay", resourceCulture);
             }
@@ -207,7 +207,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to Juneteenth National Independence Day.
         /// </summary>
-        public static string JuneteenthNationalIndependenceDay {
+        internal static string JuneteenthNationalIndependenceDay {
             get {
                 return ResourceManager.GetString("JuneteenthNationalIndependenceDay", resourceCulture);
             }
@@ -216,7 +216,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to labor day.
         /// </summary>
-        public static string LaborDay {
+        internal static string LaborDay {
             get {
                 return ResourceManager.GetString("LaborDay", resourceCulture);
             }
@@ -225,7 +225,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to Luther Reformation Day.
         /// </summary>
-        public static string LutherRefomationDay {
+        internal static string LutherRefomationDay {
             get {
                 return ResourceManager.GetString("LutherRefomationDay", resourceCulture);
             }
@@ -234,7 +234,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to Martin Luther King Jr. Day.
         /// </summary>
-        public static string MartinLutherKingJrDay {
+        internal static string MartinLutherKingJrDay {
             get {
                 return ResourceManager.GetString("MartinLutherKingJrDay", resourceCulture);
             }
@@ -243,7 +243,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to Maundy Thursday.
         /// </summary>
-        public static string MaundyThursday {
+        internal static string MaundyThursday {
             get {
                 return ResourceManager.GetString("MaundyThursday", resourceCulture);
             }
@@ -252,7 +252,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to New Year&apos;s Day.
         /// </summary>
-        public static string NewYearsDay {
+        internal static string NewYearsDay {
             get {
                 return ResourceManager.GetString("NewYearsDay", resourceCulture);
             }
@@ -261,7 +261,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to New Year&apos;s Eve.
         /// </summary>
-        public static string NewYearsEve {
+        internal static string NewYearsEve {
             get {
                 return ResourceManager.GetString("NewYearsEve", resourceCulture);
             }
@@ -270,7 +270,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to Pentecost Sunday.
         /// </summary>
-        public static string PentecostSunday {
+        internal static string PentecostSunday {
             get {
                 return ResourceManager.GetString("PentecostSunday", resourceCulture);
             }
@@ -279,7 +279,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to Thanksgiving Day.
         /// </summary>
-        public static string ThanksgivingDay {
+        internal static string ThanksgivingDay {
             get {
                 return ResourceManager.GetString("ThanksgivingDay", resourceCulture);
             }
@@ -288,7 +288,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to Independence Day.
         /// </summary>
-        public static string UnitedStatesIndependenceDay {
+        internal static string UnitedStatesIndependenceDay {
             get {
                 return ResourceManager.GetString("UnitedStatesIndependenceDay", resourceCulture);
             }
@@ -297,7 +297,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to Memorial Day.
         /// </summary>
-        public static string UnitedStatesMemorialDay {
+        internal static string UnitedStatesMemorialDay {
             get {
                 return ResourceManager.GetString("UnitedStatesMemorialDay", resourceCulture);
             }
@@ -306,7 +306,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to Veterans Day.
         /// </summary>
-        public static string VeteransDay {
+        internal static string VeteransDay {
             get {
                 return ResourceManager.GetString("VeteransDay", resourceCulture);
             }
@@ -315,7 +315,7 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to Whit Monday.
         /// </summary>
-        public static string WhitMonday {
+        internal static string WhitMonday {
             get {
                 return ResourceManager.GetString("WhitMonday", resourceCulture);
             }

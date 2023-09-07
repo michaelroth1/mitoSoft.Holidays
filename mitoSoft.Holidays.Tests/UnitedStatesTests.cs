@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using mitoSoft.Holidays.Extensions;
 using mitoSoft.Holidays.UnitedStates;
 
 namespace mitoSoft.Holidays.Tests;
@@ -58,11 +59,13 @@ public sealed class UnitedStatesTests
     }
 
     private static Holiday AssertAreEqual(DateTime expectedActualDate
-        , Func<int, Holiday> getDay)
+        , Func<int, Holiday> getDay
+        , States states = States.National)
     {
         var holiday = getDay(expectedActualDate.Year);
 
         Assert.AreEqual(expectedActualDate, holiday.ActualDate);
+        Assert.IsTrue(expectedActualDate.IsUSHoliday(states));
 
         return holiday;
     }

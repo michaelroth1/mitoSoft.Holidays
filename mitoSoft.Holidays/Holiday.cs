@@ -4,7 +4,7 @@ using System.Resources;
 
 namespace mitoSoft.Holidays
 {
-    public class Holiday<T> : IComparable<Holiday<T>>, IEquatable<Holiday<T>>
+    public abstract class Holiday<T> : IHoliday, IComparable<Holiday<T>>, IEquatable<Holiday<T>>
         where T : struct, Enum
     {
         private readonly ResourceManager _resourceManager;
@@ -27,21 +27,25 @@ namespace mitoSoft.Holidays
         /// </summary>
         public bool IsFixedDate { get; }
 
-        /// <summary />
-        public T Provinces { get; }
+        /// <summary>
+        /// Administrative divisions (also administrative units, administrative regions, subnational entities,
+        /// or a constituent states, as well as many similar generic terms) are geographical areas into which
+        /// a particular independent Sovereign state is divided.
+        /// </summary>
+        public T AdministrativeDivisions { get; }
 
-        public Holiday(string name
+        protected Holiday(string name
             , DateTime originalDate
             , DateTime actualDate
             , bool isFixedDate
-            , T provinces
+            , T administrativeDivisions
             , ResourceManager resourceManager = null)
         {
             this.Name = name;
             this.OriginalDate = originalDate;
             this.ActualDate = actualDate;
             this.IsFixedDate = isFixedDate;
-            this.Provinces = provinces;
+            this.AdministrativeDivisions = administrativeDivisions;
             _resourceManager = resourceManager ?? Resources.ResourceManager;
         }
 
@@ -57,7 +61,28 @@ namespace mitoSoft.Holidays
                 ? _resourceManager.GetString(this.Name, cultureInfo)
                 : _resourceManager.GetString(this.Name);
 
+            if (string.IsNullOrEmpty(result))
+            {
+                result = this.Name;
+            }
+
             return result;
+        }
+
+        public abstract bool IsHoliday(T administrativeDivision);
+
+        bool IHoliday.IsHoliday(string administrativeDivision)
+        {
+            if (Enum.TryParse<T>(administrativeDivision, out var enumValue))
+            {
+                var isHoliday = this.IsHoliday(enumValue);
+
+                return isHoliday;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

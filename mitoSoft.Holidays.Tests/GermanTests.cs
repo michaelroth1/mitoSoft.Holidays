@@ -1,6 +1,7 @@
 using System;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using mitoSoft.Holidays.Extensions;
 using mitoSoft.Holidays.Germany;
 
 namespace mitoSoft.Holidays.Tests;

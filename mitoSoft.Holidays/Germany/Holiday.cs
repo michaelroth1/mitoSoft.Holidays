@@ -2,17 +2,16 @@
 
 namespace mitoSoft.Holidays.Germany
 {
-    public sealed class Holiday : Holiday<Bundeslaender>, IComparable<Holiday>, IEquatable<Holiday>
+    public sealed class Holiday : Holiday<Bundeslaender>
     {
-        public Holiday(string name, DateTime date, bool isFix, Bundeslaender bundeslaender = Bundeslaender.National)
+        public Bundeslaender Bundeslaender => this.AdministrativeDivisions;
+
+        internal Holiday(string name, DateTime date, bool isFix, Bundeslaender bundeslaender)
             : base(name, date, date, isFix, bundeslaender)
         {
         }
 
-        public int CompareTo(Holiday other)
-            => this.ActualDate.Date.CompareTo(other?.ActualDate.Date ?? DateTime.MaxValue);
-
-        public bool Equals(Holiday other)
-            => this.ActualDate.Date == other?.ActualDate.Date;
+        public override bool IsHoliday(Bundeslaender bundeslaender)
+            => (this.Bundeslaender & bundeslaender) == bundeslaender;
     }
 }

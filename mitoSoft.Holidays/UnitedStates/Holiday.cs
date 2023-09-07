@@ -2,18 +2,17 @@
 
 namespace mitoSoft.Holidays.UnitedStates
 {
-    public sealed class Holiday : Holiday<States>, IComparable<Holiday>, IEquatable<Holiday>
+    public sealed class Holiday : Holiday<States>
     {
-        public Holiday(string name, DateTime originalDate, bool isFix, States states = States.National)
+        public States States => this.AdministrativeDivisions;
+
+        internal Holiday(string name, DateTime originalDate, bool isFix, States states)
             : base(name, originalDate, GetActualDate(originalDate), isFix, states)
         {
         }
 
-        public int CompareTo(Holiday other)
-            => this.ActualDate.Date.CompareTo(other?.ActualDate.Date ?? DateTime.MaxValue);
-
-        public bool Equals(Holiday other)
-            => this.ActualDate.Date == other?.ActualDate.Date;
+        public override bool IsHoliday(States states)
+            => (this.States & states) == states;
 
         private static DateTime GetActualDate(DateTime originalDate)
         {

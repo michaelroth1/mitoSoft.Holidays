@@ -1,57 +1,21 @@
 ﻿using System;
-using System.Linq;
 
-namespace mitoSoft.Holidays
+namespace mitoSoft.Holidays.Extensions
 {
     public static class DateTimeExtensions
     {
         public static Holiday<T> GetHoliday<T>(this DateTime actualDate, Holidays<T> holidays)
             where T : struct, Enum
-        {
-            var allHolidays = holidays.GetHolidays(actualDate.Year);
+            => holidays.GetHoliday(actualDate);
 
-            var holiday = allHolidays.FirstOrDefault(h => h.ActualDate.Date == actualDate.Date);
-
-            return holiday;
-        }
-
-        public static bool IsHoliday<T>(this DateTime actualDate, Holidays<T> holidays, T province)
+        public static bool IsHoliday<T>(this DateTime actualDate, Holidays<T> holidays, T administrativeDivision)
             where T : struct, Enum
-        {
-            var holiday = actualDate.GetHoliday(holidays);
+            => holidays.IsHoliday(actualDate, administrativeDivision);
 
-            var isHoliday = holiday.IsHoliday(province);
+        public static IHoliday GetHoliday(this DateTime actualDate, IHolidays holidays)
+            => holidays.GetHoliday(actualDate);
 
-            return isHoliday;
-        }
-
-        public static bool IsHoliday<T>(this Holiday<T> holiday, T province)
-            where T : struct, Enum
-        {
-            if (holiday == null)
-            {
-                return false;
-            }
-            else if (HasFlag(holiday.Provinces, province))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        private static bool HasFlag<T>(T sourceEnum, T targetEnum)
-            where T : struct, Enum
-        {
-            var sourceULong = Convert.ToUInt64(sourceEnum);
-
-            var targetULong = Convert.ToUInt64(targetEnum);
-
-            var hasFlag = (sourceULong & targetULong) == targetULong;
-
-            return hasFlag;
-        }
+        public static bool IsHoliday(this DateTime actualDate, IHolidays holidays, string administrativeDivision)
+          => holidays.IsHoliday(actualDate, administrativeDivision);
     }
 }
