@@ -51,6 +51,22 @@ public sealed class UnitedStatesTests
         AssertAreEqual(new DateTime(2023, 9, 4), GetLaborDay);
     }
 
+    [TestMethod]
+    public void EnumTest()
+    {
+        var states = (ulong)States.Alabama;
+
+        Assert.AreEqual(0b000_00000000_00000000_00000000_00000000_00000000_00000001UL, states);
+
+        states = (ulong)States.DistrictOfColumbia;
+
+        Assert.AreEqual(0b100_00000000_00000000_00000000_00000000_00000000_00000000UL, states);
+
+        states = (ulong)States.National;
+
+        Assert.AreEqual(0b111_11111111_11111111_11111111_11111111_11111111_11111111UL, states);
+    }
+
     private static void TestChristmas(DateTime expectedActualDate)
     {
         var christmasDay = AssertAreEqual(expectedActualDate, GetChristmasDay);

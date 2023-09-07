@@ -73,4 +73,20 @@ public sealed class GermanTests
         Assert.AreEqual(true, date.IsGermanHoliday(Bundeslaender.Brandenburg));
         Assert.AreEqual(false, date.IsGermanHoliday(Bundeslaender.Berlin));
     }
+
+    [TestMethod]
+    public void EnumTest()
+    {
+        var bundeslaender = (ushort)Bundeslaender.BadenWuerttemberg;
+
+        Assert.AreEqual(0b00000000_00000001U, bundeslaender);
+
+        bundeslaender = (ushort)Bundeslaender.Thueringen;
+
+        Assert.AreEqual(0b10000000_00000000U, bundeslaender);
+
+        bundeslaender = (ushort)Bundeslaender.National;
+
+        Assert.AreEqual(0b11111111_11111111U, bundeslaender);
+    }
 }
