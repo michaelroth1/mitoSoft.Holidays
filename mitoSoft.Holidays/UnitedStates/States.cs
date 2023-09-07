@@ -60,7 +60,7 @@ namespace mitoSoft.Holidays.UnitedStates
 
         DistrictOfColumbia = 1UL << 50,
 
-        National = Alabama | Alaska | Arizona | Arkansas
+        Federal = Alabama | Alaska | Arizona | Arkansas
             | California | Colorado | Connecticut
             | Delaware
             | Florida

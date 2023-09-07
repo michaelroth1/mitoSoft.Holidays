@@ -28,10 +28,10 @@ public sealed class GenericTests
         Assert.IsNotNull(holiday);
 
         Assert.IsTrue(holiday.IsHoliday(nameof(Bundeslaender.Berlin)));
-        Assert.IsTrue(date.IsHoliday(holidays, nameof(Bundeslaender.Berlin)));
+        Assert.IsTrue(date.IsHoliday(holidays, "Berlin"));
 
         Assert.IsTrue(holidays.IsHoliday(date, nameof(Bundeslaender.National)));
-        Assert.IsTrue(date.IsHoliday(holidays, nameof(Bundeslaender.National)));
+        Assert.IsTrue(date.IsHoliday(holidays, "National"));
 
         var allHolidays = holidays.GetHolidays(2023).ToList();
 

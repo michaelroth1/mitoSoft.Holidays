@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace mitoSoft.Holidays.Tests.DouglasAdams;
+namespace mitoSoft.Holidays.Tests.Nerds;
 
 internal sealed class Holiday : Holiday<Places>
 {
@@ -10,5 +10,5 @@ internal sealed class Holiday : Holiday<Places>
     }
 
     public override bool IsHoliday(Places places)
-        => (this.AdministrativeDivisions & places) == places;
+        => this.AdministrativeDivisions.HasFlag(places);
 }

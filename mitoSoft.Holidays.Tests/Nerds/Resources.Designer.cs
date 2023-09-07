@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace mitoSoft.Holidays.Tests.DouglasAdams {
+namespace mitoSoft.Holidays.Tests.Nerds {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace mitoSoft.Holidays.Tests.DouglasAdams {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("mitoSoft.Holidays.Tests.DouglasAdams.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("mitoSoft.Holidays.Tests.Nerds.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,6 +57,15 @@ namespace mitoSoft.Holidays.Tests.DouglasAdams {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to May the 4th.
+        /// </summary>
+        internal static string MayTheFourth {
+            get {
+                return ResourceManager.GetString("MayTheFourth", resourceCulture);
             }
         }
         

@@ -11,7 +11,7 @@ namespace mitoSoft.Holidays.Extensions
             return holiday;
         }
 
-        public static bool IsUSHoliday(this DateTime actualDate, UnitedStates.States states = UnitedStates.States.National)
+        public static bool IsUSHoliday(this DateTime actualDate, UnitedStates.States states = UnitedStates.States.Federal)
         {
             var holiday = actualDate.GetUSHoliday();
 

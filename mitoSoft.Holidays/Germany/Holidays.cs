@@ -11,7 +11,12 @@ namespace mitoSoft.Holidays.Germany
     {
         public override IEnumerable<Holiday<Bundeslaender>> GetHolidays(int year)
         {
-            var easterSunday = EasterSunday.GetEasterSunday(year);
+            if (year < 1949 || year > 9999)
+            {
+                throw new ArgumentException("Invalid year");
+            }
+
+            var easterSunday = EasterSunday.Get(year);
 
             yield return new Holiday(nameof(Resources.NewYearsDay), new DateTime(year, 1, 1), true, Bundeslaender.National);
             yield return new Holiday(nameof(Resources.Epiphany), new DateTime(year, 1, 6), true, Bundeslaender.BadenWuerttemberg | Bundeslaender.Bayern | Bundeslaender.SachsenAnhalt);

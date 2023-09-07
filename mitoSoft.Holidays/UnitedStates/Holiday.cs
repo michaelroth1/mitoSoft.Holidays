@@ -12,7 +12,7 @@ namespace mitoSoft.Holidays.UnitedStates
         }
 
         public override bool IsHoliday(States states)
-            => (this.States & states) == states;
+            => this.States.HasFlag(states);
 
         private static DateTime GetActualDate(DateTime originalDate)
         {

@@ -7,7 +7,7 @@ using mitoSoft.Holidays.Germany;
 namespace mitoSoft.Holidays.Tests;
 
 [TestClass]
-public sealed class GermanTests
+public sealed class GermanyTests
 {
     [TestMethod]
     [TestCategory("IsHoliday")]
@@ -46,12 +46,12 @@ public sealed class GermanTests
 
     [TestMethod]
     [TestCategory("IsHoliday")]
-    public void TestEastern2021()
+    public void TestEasterSunday()
     {
-        var date = new DateTime(2021, 4, 4);
-
-        Assert.AreEqual(true, date.IsGermanHoliday(Bundeslaender.NordrheinWestfalen));
-        Assert.AreEqual(true, date.IsGermanHoliday(Bundeslaender.National));
+        TestEasterSunday(new DateTime(2020, 4, 12));
+        TestEasterSunday(new DateTime(2021, 4, 4));
+        TestEasterSunday(new DateTime(2022, 4, 17));
+        TestEasterSunday(new DateTime(2023, 4, 9));
     }
 
     [TestMethod]
@@ -79,14 +79,20 @@ public sealed class GermanTests
     {
         var bundeslaender = (ushort)Bundeslaender.BadenWuerttemberg;
 
-        Assert.AreEqual(0b00000000_00000001U, bundeslaender);
+        Assert.AreEqual(0b_00000000_00000001U, bundeslaender);
 
         bundeslaender = (ushort)Bundeslaender.Thueringen;
 
-        Assert.AreEqual(0b10000000_00000000U, bundeslaender);
+        Assert.AreEqual(0b_10000000_00000000U, bundeslaender);
 
         bundeslaender = (ushort)Bundeslaender.National;
 
-        Assert.AreEqual(0b11111111_11111111U, bundeslaender);
+        Assert.AreEqual(0b_11111111_11111111U, bundeslaender);
+    }
+
+    private static void TestEasterSunday(DateTime date)
+    {
+        Assert.AreEqual(true, date.IsGermanHoliday(Bundeslaender.NordrheinWestfalen));
+        Assert.AreEqual(true, date.IsGermanHoliday(Bundeslaender.National));
     }
 }

@@ -10,16 +10,21 @@ namespace mitoSoft.Holidays.UnitedStates
     {
         public override IEnumerable<Holiday<States>> GetHolidays(int year)
         {
-            yield return new Holiday(nameof(Resources.NewYearsDay), new DateTime(year, 1, 1), true, States.National);
-            yield return new Holiday(nameof(Resources.MartinLutherKingJrDay), GetXthWeekDay(year, 1, DayOfWeek.Monday, 3), false, States.National);
-            yield return new Holiday(nameof(Resources.GeorgeWashingtonsBirthday), GetXthWeekDay(year, 2, DayOfWeek.Monday, 3), false, States.National);
-            yield return new Holiday(nameof(Resources.UnitedStatesMemorialDay), GetLastWeekDay(year, 5, DayOfWeek.Monday), false, States.National);
-            yield return new Holiday(nameof(Resources.JuneteenthNationalIndependenceDay), new DateTime(year, 6, 19), true, States.National);
-            yield return new Holiday(nameof(Resources.UnitedStatesIndependenceDay), new DateTime(year, 7, 4), true, States.National);
-            yield return new Holiday(nameof(Resources.LaborDay), GetXthWeekDay(year, 9, DayOfWeek.Monday, 1), false, States.National);
+            if (year < 1776 || year > 9999)
+            {
+                throw new ArgumentException("Invalid year");
+            }
+
+            yield return new Holiday(nameof(Resources.NewYearsDay), new DateTime(year, 1, 1), true, States.Federal);
+            yield return new Holiday(nameof(Resources.MartinLutherKingJrDay), GetXthWeekDay(year, 1, DayOfWeek.Monday, 3), false, States.Federal);
+            yield return new Holiday(nameof(Resources.GeorgeWashingtonsBirthday), GetXthWeekDay(year, 2, DayOfWeek.Monday, 3), false, States.Federal);
+            yield return new Holiday(nameof(Resources.UnitedStatesMemorialDay), GetLastWeekDay(year, 5, DayOfWeek.Monday), false, States.Federal);
+            yield return new Holiday(nameof(Resources.JuneteenthNationalIndependenceDay), new DateTime(year, 6, 19), true, States.Federal);
+            yield return new Holiday(nameof(Resources.UnitedStatesIndependenceDay), new DateTime(year, 7, 4), true, States.Federal);
+            yield return new Holiday(nameof(Resources.LaborDay), GetXthWeekDay(year, 9, DayOfWeek.Monday, 1), false, States.Federal);
 
             //https://en.wikipedia.org/wiki/Indigenous_Peoples%27_Day_(United_States)#Indigenous_Peoples_Day_observers
-            var columbusDayStates = States.National
+            var columbusDayStates = States.Federal
                 ^ States.Hawaii
                 ^ States.SouthDakota
                 ^ States.Alaska
@@ -43,14 +48,14 @@ namespace mitoSoft.Holidays.UnitedStates
 
             yield return new Holiday(nameof(Resources.ColumbusDay), GetXthWeekDay(year, 10, DayOfWeek.Monday, 2), false, columbusDayStates);
 
-            var indigenousPeoplesDay = States.National
+            var indigenousPeoplesDay = States.Federal
                 ^ columbusDayStates;
 
             yield return new Holiday(nameof(Resources.IndigenousPeoplesDay), GetXthWeekDay(year, 10, DayOfWeek.Monday, 2), false, indigenousPeoplesDay);
 
-            yield return new Holiday(nameof(Resources.VeteransDay), new DateTime(year, 11, 11), true, States.National);
-            yield return new Holiday(nameof(Resources.ThanksgivingDay), GetXthWeekDay(year, 11, DayOfWeek.Thursday, 4), false, States.National);
-            yield return new Holiday(nameof(Resources.ChristmasDay), new DateTime(year, 12, 25), true, States.National);
+            yield return new Holiday(nameof(Resources.VeteransDay), new DateTime(year, 11, 11), true, States.Federal);
+            yield return new Holiday(nameof(Resources.ThanksgivingDay), GetXthWeekDay(year, 11, DayOfWeek.Thursday, 4), false, States.Federal);
+            yield return new Holiday(nameof(Resources.ChristmasDay), new DateTime(year, 12, 25), true, States.Federal);
         }
 
         private static DateTime GetXthWeekDay(int year, int month, DayOfWeek weekDay, int xthWeekDay)
