@@ -67,21 +67,21 @@ public sealed class UnitedStatesTests
         Assert.AreEqual(0b111_11111111_11111111_11111111_11111111_11111111_11111111UL, states);
     }
 
-    private static void TestChristmas(DateTime expectedActualDate)
+    private static void TestChristmas(DateTime expectedObservedDate)
     {
-        var christmasDay = AssertAreEqual(expectedActualDate, GetChristmasDay);
+        var christmasDay = AssertAreEqual(expectedObservedDate, GetChristmasDay);
 
-        Assert.AreEqual(new DateTime(expectedActualDate.Year, 12, 25), christmasDay.OriginalDate);
+        Assert.AreEqual(new DateTime(expectedObservedDate.Year, 12, 25), christmasDay.OriginalDate);
     }
 
-    private static Holiday AssertAreEqual(DateTime expectedActualDate
+    private static Holiday AssertAreEqual(DateTime expectedObservedDate
         , Func<int, Holiday> getDay
         , States states = States.National)
     {
-        var holiday = getDay(expectedActualDate.Year);
+        var holiday = getDay(expectedObservedDate.Year);
 
-        Assert.AreEqual(expectedActualDate, holiday.ActualDate);
-        Assert.IsTrue(expectedActualDate.IsUSHoliday(states));
+        Assert.AreEqual(expectedObservedDate, holiday.ObservedDate);
+        Assert.IsTrue(expectedObservedDate.IsUSHoliday(states));
 
         return holiday;
     }

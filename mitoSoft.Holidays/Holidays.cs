@@ -13,7 +13,7 @@ namespace mitoSoft.Holidays
         {
             var allHolidays = this.GetHolidays(actualDate.Year);
 
-            var holiday = allHolidays.FirstOrDefault(h => h.ActualDate.Date == actualDate.Date);
+            var holiday = allHolidays.FirstOrDefault(h => h.ObservedDate.Date == actualDate.Date);
 
             return holiday;
         }

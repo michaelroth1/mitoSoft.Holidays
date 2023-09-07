@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using mitoSoft.Holidays.Extensions;
+using mitoSoft.Holidays.Germany;
 
 namespace mitoSoft.Holidays.Tests;
 
@@ -26,11 +27,11 @@ public sealed class GenericTests
 
         Assert.IsNotNull(holiday);
 
-        Assert.IsTrue(holiday.IsHoliday("Berlin"));
-        Assert.IsTrue(date.IsHoliday(holidays, "Berlin"));
+        Assert.IsTrue(holiday.IsHoliday(nameof(Bundeslaender.Berlin)));
+        Assert.IsTrue(date.IsHoliday(holidays, nameof(Bundeslaender.Berlin)));
 
-        Assert.IsTrue(holidays.IsHoliday(date, "National"));
-        Assert.IsTrue(date.IsHoliday(holidays, "National"));
+        Assert.IsTrue(holidays.IsHoliday(date, nameof(Bundeslaender.National)));
+        Assert.IsTrue(date.IsHoliday(holidays, nameof(Bundeslaender.National)));
 
         var allHolidays = holidays.GetHolidays(2023).ToList();
 

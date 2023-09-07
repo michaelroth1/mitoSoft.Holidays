@@ -9,7 +9,7 @@ namespace mitoSoft.Holidays
 
         DateTime OriginalDate { get; }
 
-        DateTime ActualDate { get; }
+        DateTime ObservedDate { get; }
 
         bool IsFixedDate { get; }
 

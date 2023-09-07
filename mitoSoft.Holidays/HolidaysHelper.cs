@@ -2,6 +2,9 @@
 {
     public static class HolidaysHelper
     {
+        /// <summary>
+        /// Supported countries: "us", "de"
+        /// </summary>
         public static IHolidays GetHolidays(string countryId)
         {
             IHolidays result = null;

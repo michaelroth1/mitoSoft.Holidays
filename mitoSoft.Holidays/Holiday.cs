@@ -20,7 +20,7 @@ namespace mitoSoft.Holidays
         /// <summary>
         /// The date that the holiday actually takes place
         /// </summary>
-        public DateTime ActualDate { get; }
+        public DateTime ObservedDate { get; }
 
         /// <summary>
         /// Determines if the holiday is defined by a date in a year
@@ -36,24 +36,24 @@ namespace mitoSoft.Holidays
 
         protected Holiday(string name
             , DateTime originalDate
-            , DateTime actualDate
+            , DateTime observedDate
             , bool isFixedDate
             , T administrativeDivisions
             , ResourceManager resourceManager = null)
         {
             this.Name = name;
             this.OriginalDate = originalDate;
-            this.ActualDate = actualDate;
+            this.ObservedDate = observedDate;
             this.IsFixedDate = isFixedDate;
             this.AdministrativeDivisions = administrativeDivisions;
             _resourceManager = resourceManager ?? Resources.ResourceManager;
         }
 
         public virtual int CompareTo(Holiday<T> other)
-           => this.ActualDate.Date.CompareTo(other?.ActualDate.Date ?? DateTime.MaxValue);
+           => this.ObservedDate.Date.CompareTo(other?.ObservedDate.Date ?? DateTime.MaxValue);
 
         public virtual bool Equals(Holiday<T> other)
-            => this.ActualDate.Date == other?.ActualDate.Date;
+            => this.ObservedDate.Date == other?.ObservedDate.Date;
 
         public virtual string GetDisplayName(CultureInfo cultureInfo = null)
         {
