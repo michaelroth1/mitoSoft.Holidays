@@ -225,9 +225,9 @@ namespace mitoSoft.Holidays {
         /// <summary>
         ///   Looks up a localized string similar to Luther Reformation Day.
         /// </summary>
-        internal static string LutherRefomationDay {
+        internal static string LutherReformationDay {
             get {
-                return ResourceManager.GetString("LutherRefomationDay", resourceCulture);
+                return ResourceManager.GetString("LutherReformationDay", resourceCulture);
             }
         }
         

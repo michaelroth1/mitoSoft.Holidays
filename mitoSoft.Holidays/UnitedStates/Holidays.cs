@@ -8,6 +8,10 @@ namespace mitoSoft.Holidays.UnitedStates
     /// </summary>
     public sealed class Holidays : Holidays<States>
     {
+        public Holidays() : base("United States of America")
+        {
+        }
+
         public override IEnumerable<Holiday<States>> GetHolidays(int year)
         {
             if (year < 1776 || year > 9999)

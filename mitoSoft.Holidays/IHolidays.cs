@@ -5,6 +5,8 @@ namespace mitoSoft.Holidays
 {
     public interface IHolidays
     {
+        string Country { get; }
+
         IEnumerable<IHoliday> GetHolidays(int year);
 
         IHoliday GetHoliday(DateTime actualDate);

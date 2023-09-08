@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Globalization;
 using System.Resources;
 
 namespace mitoSoft.Holidays
 {
+    [DebuggerDisplay("{Name}")]
     public abstract class Holiday<T> : IHoliday, IComparable<Holiday<T>>, IEquatable<Holiday<T>>
         where T : struct, Enum
     {

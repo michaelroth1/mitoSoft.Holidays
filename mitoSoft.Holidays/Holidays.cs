@@ -1,12 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace mitoSoft.Holidays
 {
+    [DebuggerDisplay("{Country}")]
     public abstract class Holidays<T> : IHolidays
         where T : struct, Enum
     {
+        public string Country { get; }
+
+        protected Holidays(string country)
+        {
+            this.Country = country;
+        }
+
         public abstract IEnumerable<Holiday<T>> GetHolidays(int year);
 
         public Holiday<T> GetHoliday(DateTime actualDate)
