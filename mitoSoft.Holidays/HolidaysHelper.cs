@@ -1,30 +1,28 @@
-﻿namespace mitoSoft.Holidays
+﻿using System.Collections.Generic;
+
+namespace mitoSoft.Holidays
 {
     public static class HolidaysHelper
     {
-        /// <summary>
-        /// Supported countries: "us", "de"
-        /// </summary>
-        public static IHolidays GetHolidays(string countryId)
+        private static readonly Dictionary<string, IHolidays> _countries;
+
+        static HolidaysHelper()
         {
-            IHolidays result = null;
-            switch (countryId?.ToLowerInvariant())
+            _countries = new Dictionary<string, IHolidays>()
             {
-                case "de":
-                    {
-                        result = new Germany.Holidays();
-
-                        break;
-                    }
-                case "us":
-                    {
-                        result = new UnitedStates.Holidays();
-
-                        break;
-                    }
-            }
-
-            return result;
+                { "de", new Germany.Holidays() },
+                { "us", new UnitedStates.Holidays() },
+            };
         }
+
+        public static IHolidays GetHolidays(string countryCode)
+        {
+            _countries.TryGetValue(countryCode, out var holidays);
+
+            return holidays;
+        }
+
+        public static void RegisterHolidays(string countryCode, IHolidays holidays)
+            => _countries[countryCode] = holidays;
     }
 }
