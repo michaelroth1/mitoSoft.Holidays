@@ -16,8 +16,8 @@ public sealed class NerdTests
     {
         var date = new DateTime(2019, 5, 25);
 
-        Assert.AreEqual(true, date.IsHoliday(_holidays, Nerds.Places.Earth));
-        Assert.AreEqual(true, date.IsHoliday(_holidays, Nerds.Places.TheKnownUniverse));
+        Assert.AreEqual(true, date.IsHoliday(_holidays, Places.Earth));
+        Assert.AreEqual(true, date.IsHoliday(_holidays, Places.TheKnownUniverse));
 
         var holiday = date.GetHoliday(_holidays);
 
@@ -30,8 +30,8 @@ public sealed class NerdTests
     {
         var date = new DateTime(2020, 5, 4);
 
-        Assert.AreEqual(false, date.IsHoliday(_holidays, Nerds.Places.Earth));
-        Assert.AreEqual(true, date.IsHoliday(_holidays, Nerds.Places.AGalaxyFarFarAway));
+        Assert.AreEqual(false, date.IsHoliday(_holidays, Places.Earth));
+        Assert.AreEqual(true, date.IsHoliday(_holidays, Places.AGalaxyFarFarAway));
 
         var holiday = date.GetHoliday(_holidays);
 

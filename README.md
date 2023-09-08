@@ -1,19 +1,20 @@
 # mitoSoft.Holidays
-A .net graph library to determine german holidays
+A lightweight library to determine German / US holidays
+
+Can be extended for other coutries.
 
 ## Example usage
 
 ```c#
 
-   var date = new DateTime(2019, 12, 25);
-   
-   Assert.AreEqual(true, date.IsHoliday(States.RheinlandPfalz));
-   Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("de");
-   Assert.AreEqual("1. Weihnachtstag", date.GetHoliday().Name);
+        var date = new DateTime(2023, 5, 4);
 
-   Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
-   Assert.AreEqual("first christmas day", date.GetHoliday().Name);
-  ...  
+        Assert.AreEqual(false, date.IsHoliday(_holidays, Places.Earth));
+        Assert.AreEqual(true, date.IsHoliday(_holidays, Places.AGalaxyFarFarAway));
+
+        var holiday = date.GetHoliday(_holidays);
+
+        Assert.AreEqual("May the 4th", holiday.GetDisplayName());
   
 ```
 
