@@ -5,17 +5,22 @@
 		<RootNamespace>mitoSoft.Holidays</RootNamespace>
 		<AssemblyName>mitoSoft.Holidays</AssemblyName>
 		<Authors>mitoSoft</Authors>
-		<Version>2.0.4</Version>
+		<Version>2.0.5</Version>
 		<Copyright>(c) mitoSoft</Copyright>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageProjectUrl>https://github.com/michaelroth1/mitoSoft.Holidays</PackageProjectUrl>
 		<PackageIcon>mitoSoft.png</PackageIcon>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<Description>A lightweight library for determining German / US holidays</Description>
-		<PackageTags>german holidays; deutsche feiertage; us-american holidays</PackageTags>
+		<PackageTags>german-holidays; deutsche-feiertage; us-american-holidays; holidays; feiertage; germany; usa; united-states</PackageTags>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
+		<None Include="..\README.md">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
 		<None Include="LICENSE">
 			<Pack>True</Pack>
 			<PackagePath></PackagePath>
