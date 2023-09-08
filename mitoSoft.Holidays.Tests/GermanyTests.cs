@@ -15,9 +15,9 @@ public sealed class GermanyTests
     {
         var date = new DateTime(2019, 11, 1);
 
-        Assert.AreEqual(true, date.IsGermanHoliday(Bundeslaender.RheinlandPfalz));
-        Assert.AreEqual(false, date.IsGermanHoliday(Bundeslaender.National));
-        Assert.AreEqual(false, date.IsGermanHoliday(Bundeslaender.Bremen));
+        Assert.IsTrue(date.IsGermanHoliday(Bundeslaender.RheinlandPfalz));
+        Assert.IsFalse(date.IsGermanHoliday(Bundeslaender.National));
+        Assert.IsFalse(date.IsGermanHoliday(Bundeslaender.Bremen));
     }
 
     [TestMethod]
@@ -26,8 +26,8 @@ public sealed class GermanyTests
     {
         var date = new DateTime(2019, 12, 25);
 
-        Assert.AreEqual(true, date.IsGermanHoliday(Bundeslaender.RheinlandPfalz));
-        Assert.AreEqual(true, date.IsGermanHoliday(Bundeslaender.National));
+        Assert.IsTrue(date.IsGermanHoliday(Bundeslaender.RheinlandPfalz));
+        Assert.IsTrue(date.IsGermanHoliday(Bundeslaender.National));
         Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("de");
         Assert.AreEqual("ChristmasDay", date.GetGermanHoliday().Name);
         Assert.AreEqual("1. Weihnachtsfeiertag", date.GetGermanHoliday().GetDisplayName());
@@ -60,7 +60,7 @@ public sealed class GermanyTests
     {
         var date = new DateTime(2019, 12, 23);
 
-        Assert.AreEqual(false, date.IsGermanHoliday(Bundeslaender.RheinlandPfalz));
+        Assert.IsFalse(date.IsGermanHoliday(Bundeslaender.RheinlandPfalz));
     }
 
     [TestMethod]
@@ -69,9 +69,9 @@ public sealed class GermanyTests
     {
         var date = new DateTime(2019, 10, 31);
 
-        Assert.AreEqual(false, date.IsGermanHoliday(Bundeslaender.National));
-        Assert.AreEqual(true, date.IsGermanHoliday(Bundeslaender.Brandenburg));
-        Assert.AreEqual(false, date.IsGermanHoliday(Bundeslaender.Berlin));
+        Assert.IsFalse(date.IsGermanHoliday(Bundeslaender.National));
+        Assert.IsTrue(date.IsGermanHoliday(Bundeslaender.Brandenburg));
+        Assert.IsFalse(date.IsGermanHoliday(Bundeslaender.Berlin));
     }
 
     [TestMethod]
@@ -92,7 +92,7 @@ public sealed class GermanyTests
 
     private static void TestEasterSunday(DateTime date)
     {
-        Assert.AreEqual(true, date.IsGermanHoliday(Bundeslaender.NordrheinWestfalen));
-        Assert.AreEqual(true, date.IsGermanHoliday(Bundeslaender.National));
+        Assert.IsTrue(date.IsGermanHoliday(Bundeslaender.NordrheinWestfalen));
+        Assert.IsTrue(date.IsGermanHoliday(Bundeslaender.National));
     }
 }

@@ -7,14 +7,16 @@ Can be extended for other coutries.
 
 ```c#
 
-        var date = new DateTime(2023, 5, 4);
+var holidays = new Nerds.Holidays();
 
-        Assert.AreEqual(false, date.IsHoliday(_holidays, Places.Earth));
-        Assert.AreEqual(true, date.IsHoliday(_holidays, Places.AGalaxyFarFarAway));
+var date = new DateTime(2023, 5, 4);
 
-        var holiday = date.GetHoliday(_holidays);
+Assert.IsFalse(date.IsHoliday(holidays, Places.Earth));
+Assert.IsTrue(date.IsHoliday(holidays, Places.AGalaxyFarFarAway));
 
-        Assert.AreEqual("May the 4th", holiday.GetDisplayName());
+var holiday = date.GetHoliday(holidays);
+
+Assert.AreEqual("May the 4th", holiday.GetDisplayName());
   
 ```
 
