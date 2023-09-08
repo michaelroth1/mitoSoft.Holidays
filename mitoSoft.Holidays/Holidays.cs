@@ -19,34 +19,22 @@ namespace mitoSoft.Holidays
         public abstract IEnumerable<Holiday<T>> GetHolidays(int year);
 
         public Holiday<T> GetHoliday(DateTime actualDate)
-        {
-            var allHolidays = this.GetHolidays(actualDate.Year);
+            => this.GetHolidays(actualDate).FirstOrDefault();
 
-            var holiday = allHolidays.FirstOrDefault(h => h.ObservedDate.Date == actualDate.Date);
-
-            return holiday;
-        }
+        public IEnumerable<Holiday<T>> GetHolidays(DateTime actualDate)
+            => this.GetHolidays(actualDate.Year).Where(h => h.ObservedDate.Date == actualDate.Date);
 
         public bool IsHoliday(DateTime actualDate, T administrativeDivision)
-        {
-            var holiday = this.GetHoliday(actualDate);
-
-            var isHoliday = holiday?.IsHoliday(administrativeDivision) ?? false;
-
-            return isHoliday;
-        }
+            => this.GetHolidays(actualDate).Any(h => h.IsHoliday(administrativeDivision));
 
         IHoliday IHolidays.GetHoliday(DateTime actualDate)
             => this.GetHoliday(actualDate);
 
+        IEnumerable<IHoliday> IHolidays.GetHolidays(DateTime actualDate)
+          => this.GetHolidays(actualDate);
+
         bool IHolidays.IsHoliday(DateTime actualDate, string administrativeDivision)
-        {
-            var holiday = this.GetHoliday(actualDate) as IHoliday;
-
-            var isHoliday = holiday?.IsHoliday(administrativeDivision) ?? false;
-
-            return isHoliday;
-        }
+            => ((IHolidays)this).GetHolidays(actualDate).Any(h => h.IsHoliday(administrativeDivision));
 
         IEnumerable<IHoliday> IHolidays.GetHolidays(int year)
             => this.GetHolidays(year);

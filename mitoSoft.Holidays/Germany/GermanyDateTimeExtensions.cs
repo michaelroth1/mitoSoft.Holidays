@@ -1,17 +1,18 @@
 ﻿using System;
+using mitoSoft.Holidays.Germany;
 
 namespace mitoSoft.Holidays.Extensions
 {
     public static class GermanyDateTimeExtensions
     {
-        public static Germany.Holiday GetGermanHoliday(this DateTime actualDate)
+        public static Holiday GetGermanHoliday(this DateTime actualDate)
         {
-            var holiday = actualDate.GetHoliday(new Germany.Holidays()) as Germany.Holiday;
+            var holiday = actualDate.GetHoliday(new Germany.Holidays()) as Holiday;
 
             return holiday;
         }
 
-        public static bool IsGermanHoliday(this DateTime actualDate, Germany.Bundeslaender bundeslaender = Germany.Bundeslaender.National)
+        public static bool IsGermanHoliday(this DateTime actualDate, Bundeslaender bundeslaender = Bundeslaender.National)
         {
             var holiday = actualDate.GetGermanHoliday();
 

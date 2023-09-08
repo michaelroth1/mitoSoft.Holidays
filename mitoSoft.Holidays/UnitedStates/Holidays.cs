@@ -27,6 +27,10 @@ namespace mitoSoft.Holidays.UnitedStates
             yield return new Holiday(nameof(Resources.UnitedStatesIndependenceDay), new DateTime(year, 7, 4), true, States.Federal);
             yield return new Holiday(nameof(Resources.LaborDay), GetXthWeekDay(year, 9, DayOfWeek.Monday, 1), false, States.Federal);
 
+            var columbusDayDate = GetXthWeekDay(year, 10, DayOfWeek.Monday, 2);
+
+            yield return new Holiday(nameof(Resources.ColumbusDay), columbusDayDate, false, States.Federal);
+
             //https://en.wikipedia.org/wiki/Indigenous_Peoples%27_Day_(United_States)#Indigenous_Peoples_Day_observers
             var columbusDayStates = States.Federal
                 ^ States.Hawaii
@@ -50,12 +54,10 @@ namespace mitoSoft.Holidays.UnitedStates
                 ^ States.Oregon
                 ^ States.Texas;
 
-            yield return new Holiday(nameof(Resources.ColumbusDay), GetXthWeekDay(year, 10, DayOfWeek.Monday, 2), false, columbusDayStates);
-
             var indigenousPeoplesDay = States.Federal
                 ^ columbusDayStates;
 
-            yield return new Holiday(nameof(Resources.IndigenousPeoplesDay), GetXthWeekDay(year, 10, DayOfWeek.Monday, 2), false, indigenousPeoplesDay);
+            yield return new Holiday(nameof(Resources.IndigenousPeoplesDay), columbusDayDate, false, indigenousPeoplesDay);
 
             yield return new Holiday(nameof(Resources.VeteransDay), new DateTime(year, 11, 11), true, States.Federal);
             yield return new Holiday(nameof(Resources.ThanksgivingDay), GetXthWeekDay(year, 11, DayOfWeek.Thursday, 4), false, States.Federal);

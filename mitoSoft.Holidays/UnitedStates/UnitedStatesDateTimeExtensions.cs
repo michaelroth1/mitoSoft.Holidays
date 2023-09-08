@@ -1,17 +1,18 @@
 ﻿using System;
+using mitoSoft.Holidays.UnitedStates;
 
 namespace mitoSoft.Holidays.Extensions
 {
     public static class UnitedStatesDateTimeExtensions
     {
-        public static UnitedStates.Holiday GetUSHoliday(this DateTime actualDate)
+        public static Holiday GetUSHoliday(this DateTime actualDate)
         {
-            var holiday = actualDate.GetHoliday(new UnitedStates.Holidays()) as UnitedStates.Holiday;
+            var holiday = actualDate.GetHoliday(new UnitedStates.Holidays()) as Holiday;
 
             return holiday;
         }
 
-        public static bool IsUSHoliday(this DateTime actualDate, UnitedStates.States states = UnitedStates.States.Federal)
+        public static bool IsUSHoliday(this DateTime actualDate, States states = States.Federal)
         {
             var holiday = actualDate.GetUSHoliday();
 

@@ -52,6 +52,20 @@ public sealed class UnitedStatesTests
     }
 
     [TestMethod]
+    [TestCategory("IsHoliday")]
+    public void TestColumbusDay()
+    {
+        var date = new DateTime(2023, 10, 9);
+
+        var holidays = _holidays.GetHolidays(date).ToList();
+
+        Assert.AreEqual(2, holidays.Count);
+
+        Assert.IsTrue(date.IsHoliday(_holidays, "Texas"));
+        Assert.IsTrue(date.IsHoliday(_holidays, "Federal"));
+    }
+
+    [TestMethod]
     public void EnumTest()
     {
         var states = (ulong)States.Alabama;
