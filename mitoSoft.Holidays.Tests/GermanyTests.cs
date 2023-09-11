@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using mitoSoft.Holidays.Extensions;
@@ -9,6 +10,8 @@ namespace mitoSoft.Holidays.Tests;
 [TestClass]
 public sealed class GermanyTests
 {
+    private static readonly Germany.Holidays _holidays = new();
+
     [TestMethod]
     [TestCategory("IsHoliday")]
     public void TestAllSaints()
@@ -72,6 +75,14 @@ public sealed class GermanyTests
         Assert.IsFalse(date.IsGermanHoliday(Bundeslaender.National));
         Assert.IsTrue(date.IsGermanHoliday(Bundeslaender.Brandenburg));
         Assert.IsFalse(date.IsGermanHoliday(Bundeslaender.Berlin));
+
+        date = new DateTime(2023, 1, 6);
+
+        var epiphany = ((IHolidays)_holidays).GetHoliday(date);
+
+        var bundeslaenderNames = epiphany.GetAdministrativeDivisions().ToList();
+
+        Assert.AreEqual(3, bundeslaenderNames.Count);
     }
 
     [TestMethod]
@@ -88,6 +99,10 @@ public sealed class GermanyTests
         bundeslaender = (ushort)Bundeslaender.National;
 
         Assert.AreEqual(0b_11111111_11111111U, bundeslaender);
+
+        var bundeslaenderNames = ((IHolidays)_holidays).GetAdministrativeDivisions().ToList();
+
+        Assert.AreEqual(18, bundeslaenderNames.Count);
     }
 
     private static void TestEasterSunday(DateTime date)

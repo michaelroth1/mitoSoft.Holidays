@@ -14,5 +14,7 @@ namespace mitoSoft.Holidays
         IEnumerable<IHoliday> GetHolidays(DateTime actualDate);
 
         bool IsHoliday(DateTime actualDate, string administrativeDivision);
+
+        IEnumerable<string> GetAdministrativeDivisions();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.Resources;
@@ -84,6 +85,22 @@ namespace mitoSoft.Holidays
             else
             {
                 return false;
+            }
+        }
+
+        IEnumerable<string> IHoliday.GetAdministrativeDivisions()
+        {
+            var enumFields = typeof(T).GetFields(System.Reflection.BindingFlags.Static
+                | System.Reflection.BindingFlags.Public);
+
+            foreach (var enumField in enumFields)
+            {
+                var enumValue = (T)enumField.GetValue(null);
+
+                if (this.IsHoliday(enumValue))
+                {
+                    yield return enumField.Name;
+                }
             }
         }
     }

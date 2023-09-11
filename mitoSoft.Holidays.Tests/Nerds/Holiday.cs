@@ -10,5 +10,5 @@ internal sealed class Holiday : Holiday<Places>
     }
 
     public override bool IsHoliday(Places places)
-        => this.AdministrativeDivisions.HasFlag(places);
+        => places != Places.None && this.AdministrativeDivisions.HasFlag(places);
 }

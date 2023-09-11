@@ -12,6 +12,6 @@ namespace mitoSoft.Holidays.Germany
         }
 
         public override bool IsHoliday(Bundeslaender bundeslaender)
-            => this.Bundeslaender.HasFlag(bundeslaender);
+            => bundeslaender != Bundeslaender.None && this.Bundeslaender.HasFlag(bundeslaender);
     }
 }

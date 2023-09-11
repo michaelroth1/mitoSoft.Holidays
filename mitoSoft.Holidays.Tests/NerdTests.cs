@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using mitoSoft.Holidays.Extensions;
 using mitoSoft.Holidays.Tests.Nerds;
@@ -52,5 +53,9 @@ public sealed class NerdTests
         places = (byte)Places.TheKnownUniverse;
 
         Assert.AreEqual(0b_000000111U, places);
+
+        var placesNames = ((IHolidays)_holidays).GetAdministrativeDivisions().ToList();
+
+        Assert.AreEqual(5, placesNames.Count);
     }
 }

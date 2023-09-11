@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 
 namespace mitoSoft.Holidays
@@ -16,5 +17,7 @@ namespace mitoSoft.Holidays
         string GetDisplayName(CultureInfo cultureInfo = null);
 
         bool IsHoliday(string administrativeDivision);
+
+        IEnumerable<string> GetAdministrativeDivisions();
     }
 }

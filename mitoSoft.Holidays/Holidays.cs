@@ -38,5 +38,16 @@ namespace mitoSoft.Holidays
 
         IEnumerable<IHoliday> IHolidays.GetHolidays(int year)
             => this.GetHolidays(year);
+
+        IEnumerable<string> IHolidays.GetAdministrativeDivisions()
+        {
+            var enumFields = typeof(T).GetFields(System.Reflection.BindingFlags.Static
+                | System.Reflection.BindingFlags.Public);
+
+            foreach (var enumField in enumFields)
+            {
+                yield return enumField.Name;
+            }
+        }
     }
 }

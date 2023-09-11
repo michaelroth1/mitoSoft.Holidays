@@ -79,6 +79,10 @@ public sealed class UnitedStatesTests
         states = (ulong)States.Federal;
 
         Assert.AreEqual(0b_00000111_11111111_11111111_11111111_11111111_11111111_11111111UL, states);
+
+        var stateNames = ((IHolidays)_holidays).GetAdministrativeDivisions().ToList();
+
+        Assert.AreEqual(53, stateNames.Count);
     }
 
     private static void TestChristmas(DateTime expectedObservedDate)
