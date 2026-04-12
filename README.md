@@ -248,7 +248,7 @@ HolidaysHelper.RegisterHolidays("yc", new YourCountry.Holidays());
 The library includes a built-in `EasterSunday` calculator that uses the Oudin (1940) algorithm:
 
 ```csharp
-var easterSunday = EasterSunday.Get(2024); // April 31, 2024
+var easterSunday = EasterSunday.Get(2024); // March 31, 2024
 var goodFriday = easterSunday.AddDays(-2);
 var easterMonday = easterSunday.AddDays(1);
 var ascension = easterSunday.AddDays(39);
