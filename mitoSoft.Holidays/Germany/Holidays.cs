@@ -4,15 +4,26 @@ using System.Collections.Generic;
 namespace mitoSoft.Holidays.Germany
 {
     /// <summary>
+    /// Provides a collection of holidays for the Federal Republic of Germany.
+    /// References:
     /// https://dotnet-snippets.de/snippet/ermittlung-von-feiertagen-feiertaglogic/763
     /// https://www.feiertage.net/bundeslaender.php
     /// </summary>
     public sealed class Holidays : Holidays<Bundeslaender>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Holidays"/> class for Germany.
+        /// </summary>
         public Holidays() : base("Federal Republic of Germany")
         {
         }
 
+        /// <summary>
+        /// Gets all German holidays for the specified year.
+        /// </summary>
+        /// <param name="year">The year for which to retrieve holidays (must be between 1949 and 9999).</param>
+        /// <returns>An enumerable collection of German holidays for the specified year.</returns>
+        /// <exception cref="ArgumentException">Thrown when the year is less than 1949 or greater than 9999.</exception>
         public override IEnumerable<Holiday<Bundeslaender>> GetHolidays(int year)
         {
             if (year < 1949 || year > 9999)

@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="mitoSoft.Holidays.Tests/mitoSoft.Holidays.Tests.csproj" />
+  <Project Path="mitoSoft.Holidays/mitoSoft.Holidays.csproj" />
+</Solution>

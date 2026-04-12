@@ -4,14 +4,24 @@ using System.Collections.Generic;
 namespace mitoSoft.Holidays.UnitedStates
 {
     /// <summary>
-    /// https://en.wikipedia.org/wiki/Federal_holidays_in_the_United_States
+    /// Provides a collection of holidays for the United States of America.
+    /// Reference: https://en.wikipedia.org/wiki/Federal_holidays_in_the_United_States
     /// </summary>
     public sealed class Holidays : Holidays<States>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Holidays"/> class for the United States.
+        /// </summary>
         public Holidays() : base("United States of America")
         {
         }
 
+        /// <summary>
+        /// Gets all US holidays for the specified year.
+        /// </summary>
+        /// <param name="year">The year for which to retrieve holidays (must be between 1776 and 9999).</param>
+        /// <returns>An enumerable collection of US holidays for the specified year.</returns>
+        /// <exception cref="ArgumentException">Thrown when the year is less than 1776 or greater than 9999.</exception>
         public override IEnumerable<Holiday<States>> GetHolidays(int year)
         {
             if (year < 1776 || year > 9999)

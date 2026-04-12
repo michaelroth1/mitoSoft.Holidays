@@ -2,12 +2,19 @@
 
 namespace mitoSoft.Holidays
 {
+    /// <summary>
+    /// Provides methods for calculating Easter Sunday dates.
+    /// </summary>
     public static class EasterSunday
     {
         /// <summary>
+        /// Calculates the date of Easter Sunday for the specified year.
         /// This algorithm is based in part on the algorithm of Oudin (1940) as quoted in
         /// "Explanatory Supplement to the Astronomical Almanac", P.Kenneth Seidelmann.
         /// </summary>
+        /// <param name="year">The year for which to calculate Easter Sunday (must be between 1 and 9999).</param>
+        /// <returns>The date of Easter Sunday.</returns>
+        /// <exception cref="ArgumentException">Thrown when the year is less than 1 or greater than 9999.</exception>
         public static DateTime Get(int year)
         {
             if (year < 1 || year > 9999)

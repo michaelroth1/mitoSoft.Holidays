@@ -1,11 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>netstandard2.0</TargetFramework>
+		<TargetFrameworks>netstandard2.0;net10.0</TargetFrameworks>
+		<LangVersion>latest</LangVersion>
 		<RootNamespace>mitoSoft.Holidays</RootNamespace>
 		<AssemblyName>mitoSoft.Holidays</AssemblyName>
 		<Authors>mitoSoft</Authors>
-		<Version>2.0.6</Version>
+		<Version>2.0.7</Version>
 		<Copyright>(c) mitoSoft</Copyright>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageProjectUrl>https://github.com/michaelroth1/mitoSoft.Holidays</PackageProjectUrl>
@@ -14,21 +15,14 @@
 		<Description>A lightweight library for determining German / US holidays</Description>
 		<PackageTags>german-holidays; deutsche-feiertage; us-american-holidays; holidays; feiertage; germany; usa; united-states</PackageTags>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<WarningsAsErrors>CS1591</WarningsAsErrors>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Include="..\README.md">
-		  <Pack>True</Pack>
-		  <PackagePath>\</PackagePath>
-		</None>
-		<None Include="LICENSE">
-			<Pack>True</Pack>
-			<PackagePath></PackagePath>
-		</None>
-		<None Include="mitoSoft.png">
-			<Pack>True</Pack>
-			<PackagePath></PackagePath>
-		</None>
+		<None Include="..\README.md" Pack="true" PackagePath="\" />
+		<None Include="LICENSE" Pack="true" PackagePath="\" />
+		<None Include="mitoSoft.png" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
 	<ItemGroup>
