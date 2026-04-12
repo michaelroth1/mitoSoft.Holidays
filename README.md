@@ -25,13 +25,13 @@ mitoSoft.Holidays is a comprehensive holiday management library that provides:
 
 Install via NuGet Package Manager:
 
-```
+```powershell
 Install-Package mitoSoft.Holidays
 ```
 
 Or via .NET CLI:
 
-```
+```bash
 dotnet add package mitoSoft.Holidays
 ```
 
@@ -56,7 +56,6 @@ Holidays may be observed differently across these divisions. For example:
 
 ```csharp
 using mitoSoft.Holidays.Germany;
-using mitoSoft.Holidays.Extensions;
 
 // Get all German holidays for a specific year
 var germanHolidays = new Holidays();
@@ -89,7 +88,6 @@ bool isUSHoliday = usHolidays.IsHoliday(date, "Federal");
 
 ```csharp
 using mitoSoft.Holidays.UnitedStates;
-using mitoSoft.Holidays.Extensions;
 
 var usHolidays = new Holidays();
 
